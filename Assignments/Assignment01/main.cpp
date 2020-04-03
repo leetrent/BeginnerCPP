@@ -24,7 +24,7 @@ string reverse(string value)
 }
 
 
-void printRow(size_t subsetSize, size_t capacity, string value, size_t bufferSize)
+void printRow(size_t subsetSize, string value, size_t bufferSize)
 {
     // cout << "------------------------------------------------------------" << endl;
     // cout << "value...........: " << "'" << value << "'" << endl;
@@ -75,7 +75,7 @@ int main()
     for ( size_t ii{0}; ii < userProvided.length(); ii++ )
     {
         size_t rowNbr = ii + 1;
-        printRow(rowNbr, (rowNbr + ii), userProvided, userProvided.length() * 2 - 1  );
+        printRow(rowNbr, userProvided, userProvided.length() * 2 - 1  );
         cout << endl;
     }
 
