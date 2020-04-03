@@ -2,7 +2,6 @@
 #include <string>
 using namespace std;
 
-
 // string reverse(string const &s)
 // {
 // 	string rev;
@@ -23,59 +22,27 @@ string reverse(string value)
     return rev;
 }
 
-
-void printRow(size_t subsetSize, string value, size_t bufferSize)
+void printRow(size_t substrSize, string value, size_t lineSize)
 {
-    // cout << "------------------------------------------------------------" << endl;
-    // cout << "value...........: " << "'" << value << "'" << endl;
-    // cout << "value.length()..: " << value.length() << endl;
+    string rowContent = value.substr(0, substrSize);
+    string reversedRowContent = reverse(rowContent);
+    rowContent.append(reversedRowContent.substr(1));
 
-    // cout << endl;
-    // cout << "capacity..,.....: " << capacity     << endl;
-
-    // cout << endl;
-    // cout << "subsetSize......: " << subsetSize   << endl;
-
-    // cout << endl;
-    // cout << "bufferSize......: " << bufferSize   << endl;
-
-    // string buffer(bufferSize, ' ');
-    // cout << "buffer: '" << buffer << "'" << endl;
-    // cout << "------------------------------------------------------------" << endl;
-
-    ////////////////////////////////////////////////
-    // GOLDEN:   
-    ////////////////////////////////////////////////
-    // string subset = value.substr(0, subsetSize);
-    // string reversedSubset = reverse(subset);
-    // cout << subset;
-    // cout << reversedSubset.substr(1);
-    ////////////////////////////////////////////////
-
-    string subset = value.substr(0, subsetSize);
-    string reversedSubset = reverse(subset);
-    subset.append(reversedSubset.substr(1));
-    //cout << subset;
-
-    string buffer(bufferSize, ' ');
-    buffer.replace( (bufferSize - subset.length()) / 2, subsetSize, subset);
+    string buffer(lineSize, ' ');
+    buffer.replace( ( lineSize - rowContent.length() ) / 2, substrSize, rowContent);
     cout << buffer;
-    //cout << "buffer: '" << buffer << "'" << endl;
-
 }
 
 int main()
 { 
     string userProvided {};
-    size_t stringLength {};
 
     cout << "Enter a string: ";
     cin >> userProvided;
 
     for ( size_t ii{0}; ii < userProvided.length(); ii++ )
     {
-        size_t rowNbr = ii + 1;
-        printRow(rowNbr, userProvided, userProvided.length() * 2 - 1  );
+        printRow(ii + 1, userProvided, userProvided.length() * 2 - 1  );
         cout << endl;
     }
 
