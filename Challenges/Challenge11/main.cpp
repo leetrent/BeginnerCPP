@@ -18,6 +18,10 @@ double  determineMean       (vector<int> *vec);
 int     determineSmallest   (vector<int> *vec);
 int     determineLargest    (vector<int> *vec);
 
+// NEW STUFF:
+void handle_find(const vector<int> &vec);
+bool find(const vector<int> &vec, int target);
+
 int main()
 {
     //vector<int> vec {1,2,3,4,5};
@@ -48,8 +52,8 @@ int main()
             case 'L':
                 onLargestSelected(&vec);
                 break;            
-            case 'D':
-                cout << "Display" << endl;
+            case 'F':
+                handle_find(vec);
                 break;            
             case 'Q':
                 cout << "Goodbye..." << endl;
@@ -74,6 +78,7 @@ void printMenuOptions()
     cout << "M - Display mean of the numbers"   << endl;
     cout << "S - Display the smallest number"   << endl;
     cout << "L - Display the largest number"    << endl;
+    cout << "F - Find a number"                 << endl;
     cout << "Q - Quit"                          << endl;
 }
 
@@ -195,3 +200,31 @@ int determineLargest(vector<int> *vec)
     }
     return largest;
 }
+
+void handle_find(const vector<int> &vec)
+{
+    int target{};
+    cout << "Enter the number to find: ";
+    cin >> target;
+    if ( find(vec, target))
+    {
+        cout << "Number was found!" << endl;
+    }
+    else
+    {
+        cout << "Number was not found." << endl;
+    }
+ }
+
+bool find(const vector<int> &vec, int target)
+{
+    for (auto nbr : vec)
+    {
+        if (nbr == target)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
