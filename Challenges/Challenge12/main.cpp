@@ -53,7 +53,8 @@ int* apply_all(const int *const array1, size_t array1_size, const int *const arr
     {
         for ( size_t ii{0}; ii < array1_size; ii++)
         {
-            *(result_ptr + kk++) = (array2[jj] * array1[ii]);
+            //*(result_ptr + kk++) = (array2[jj] * array1[ii]);
+            result_ptr[kk++] = (array2[jj] * array1[ii]);
         }
     }
     return result_ptr;
