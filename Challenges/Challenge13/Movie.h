@@ -10,6 +10,8 @@ class Movie
         std::string mpa_rating;
         int watched_count;
 
+        void debug();
+
     public:
 
     // Contructor (3 args)
@@ -19,7 +21,7 @@ class Movie
     Movie(const Movie &source);
 
     // Destructor
-    ~Movie();   
+    //~Movie();   
 
     // Getters
     std::string get_movie_name() const;
