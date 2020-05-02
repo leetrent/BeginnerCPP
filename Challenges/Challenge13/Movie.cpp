@@ -4,20 +4,19 @@
 // Contructor (3 args)
 Movie::Movie(std::string movie_name, std::string mpa_rating, int watched_count) 
     :movie_name(movie_name), mpa_rating(mpa_rating), watched_count(watched_count) {
-        std::cout << std::endl << "[Movie::Movie][3-arg] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
-        //debug();
+        //std::cout << std::endl << "[Movie::Movie][3-arg] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 };
 
    // Copy constructor
 Movie::Movie(const Movie &source) 
     :Movie{source.movie_name, source.mpa_rating, source.watched_count} {
-        movie_name.append(" (copy)");
-    std::cout << std::endl << "[Movie::Movie][copy constructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+    //movie_name.append(" (copy)");
+    //std::cout << std::endl << "[Movie::Movie][copy constructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }
 
 // Destructor
 Movie::~Movie() {
-    std::cout << std::endl << "[Movie::Movie][destructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+    //std::cout << std::endl << "[Movie::Movie][destructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }
 
 // Getters
@@ -47,5 +46,5 @@ void Movie::set_watched_count(int watched_count) {
 }
 
 void Movie::display() const {
-    std::cout << std::endl << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+    std::cout << std::endl << "[" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }

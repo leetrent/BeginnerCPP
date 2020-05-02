@@ -1,22 +1,48 @@
 #include <iostream>
-#include "Movie.h"
+#include "Movies.h"
 using namespace std;
+
+void increment_watched(Movies &movies, string name);
+void add_movie(Movies &movies, string movie_name, string mpa_rating, int watched_count);
 
 int main()
 {
-    cout << endl << "Instantianing Movie #1 on the stack using 3-arg constructor:" << endl;
-    Movie movie1("Gravity", "PG", 0);
-
-    cout << endl << "Instantianing Movie #2 on the stack using copy constructor:" << endl;
-    Movie movie2(movie1);
-
-    cout << endl << "Instantianing Movie #3 on the heap using the new operator:" << endl;
-    Movie* movie3 = new Movie("Movie #3", "R", 0);
-    cout << endl << "movie3:  " << movie3 << endl;
-    cout << endl << "&movie3: " << &movie3 << endl;
-
-    cout << endl << "Deleting *movie3" << endl;
-    delete movie3;
+    Movies my_movies;
     
+    my_movies.display();
+
+    add_movie(my_movies, "Big", "PG-13",2);     // OK
+    add_movie(my_movies,"Star Wars", "PG",5);   // OK
+    add_movie(my_movies,"Cinderella", "PG",7);  // OK
+
+    my_movies.display();   // Big, Star Wars, Cinderella
+
+    add_movie(my_movies,"Cinderella", "PG",7);  // Already exists
+    add_movie(my_movies,"Ice Age", "PG",12);    // OK
+
+    my_movies.display();    // Big, Star Wars, Cinderella, Ice Age
+
+    increment_watched(my_movies,"Big");                    // OK
+    increment_watched(my_movies,"Ice Age");              // OK
+    
+    my_movies.display();    // Big and Ice Age watched count incremented by 1
+    
+    increment_watched(my_movies,"XXX");         // XXX not found
+
     return 0;
+}
+
+void add_movie(Movies &movies, string movie_name, string mpa_rating, int watched_count) {
+    if ( movies.add_movie(movie_name, mpa_rating, watched_count)) {
+        cout << endl << movie_name << " added." << endl;
+    } else {
+        cout << endl << movie_name << " already exists." << endl;
+    }
+}
+void increment_watched(Movies &movies, string movie_name) {
+    if ( movies.increment_watched_count(movie_name) ) {
+        cout << endl << movie_name << " watch count incremented" << endl;
+    } else {
+        cout << endl << movie_name << " not found " << endl;
+    }
 }
