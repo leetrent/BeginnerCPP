@@ -11,7 +11,12 @@ Movie::Movie(std::string movie_name, std::string mpa_rating, int watched_count)
    // Copy constructor
 Movie::Movie(const Movie &source) 
     :Movie{source.movie_name, source.mpa_rating, source.watched_count} {
+        movie_name.append(" (copy)");
     std::cout << std::endl << "[Movie::Movie][copy constructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+}
+
+Movie::~Movie() {
+    std::cout << std::endl << "[Movie::Movie][destructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }
 
 void Movie::debug() {

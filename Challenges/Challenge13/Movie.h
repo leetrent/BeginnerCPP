@@ -21,7 +21,7 @@ class Movie
     Movie(const Movie &source);
 
     // Destructor
-    //~Movie();   
+    ~Movie();   
 
     // Getters
     std::string get_movie_name() const;
