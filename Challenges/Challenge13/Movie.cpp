@@ -15,8 +15,35 @@ Movie::Movie(const Movie &source)
     std::cout << std::endl << "[Movie::Movie][copy constructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }
 
+// Destructor
 Movie::~Movie() {
     std::cout << std::endl << "[Movie::Movie][destructor] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+}
+
+// Getters
+std::string Movie:: get_movie_name() const {
+    return movie_name;
+}
+
+std::string Movie::get_mpa_rating() const {
+    return mpa_rating;
+}
+
+int Movie::get_watched_count() const {
+    return watched_count;
+}
+
+// Setters 
+void Movie::set_movie_name(std::string movie_name) {
+    this->movie_name = movie_name;
+}
+
+void Movie::set_mpa_rating(std::string mpa_rating) {
+    this->mpa_rating = mpa_rating;
+}
+
+void Movie::set_watched_count(int watched_count) {
+    this->watched_count = watched_count;
 }
 
 void Movie::debug() {
