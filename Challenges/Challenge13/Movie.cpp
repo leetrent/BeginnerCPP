@@ -46,6 +46,6 @@ void Movie::set_watched_count(int watched_count) {
     this->watched_count = watched_count;
 }
 
-void Movie::debug() {
-    std::cout << "[Movie::debug] => [" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+void Movie::display() const {
+    std::cout << std::endl << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
 }

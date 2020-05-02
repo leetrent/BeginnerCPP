@@ -13,7 +13,7 @@ class Movies {
         ~Movies();
 
         bool add_movie(std::string movie_name, std::string mpa_rating, int watched_count);
-        bool increment_watched_count(int watched_count);
+        bool increment_watched_count(std::string movie_name);
         void display() const;
 };
 
