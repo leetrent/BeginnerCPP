@@ -23,11 +23,9 @@ bool Movies::add_movie(std::string movie_name, std::string mpa_rating, int watch
 }
 
  bool Movies::increment_watched_count(std::string movie_name) {
-     for ( Movie movie: this->movies) {
+     for ( Movie &movie: this->movies) {
          if ( movie.get_movie_name() == movie_name) {
-             std::cout << std::endl << "BEFORE: [" << movie_name << " | " << movie.get_watched_count() << "]" << std::endl;
-             movie.set_watched_count(movie.get_watched_count() + 1);
-             std::cout << "AFTER: [" << movie_name << " | " << movie.get_watched_count() << "]" << std::endl;
+             movie.increment_watched_count();
              return true;
          }
      }
@@ -35,11 +33,13 @@ bool Movies::add_movie(std::string movie_name, std::string mpa_rating, int watch
  }
 
  void Movies::display() const {
-     if ( this->movies.empty() ) {
-         std::cout << std::endl << "Movie collection is empty - no movies to display" << std::endl;
-     } else {
+    std::cout << "===================================" << std::endl;
+    if ( this->movies.empty() ) {
+        std::cout << "Movie collection is empty - no movies to display" << std::endl;
+    } else {
         for (const Movie movie : this->movies) {
             movie.display();
         }
-     }
+    }
+    std::cout << "===================================" << std::endl;
  }

@@ -28,10 +28,7 @@ class Movie
     std::string get_mpa_rating() const;
     int get_watched_count() const;
 
-    // Setters
-    void set_movie_name(std::string movie_name);
-    void set_mpa_rating(std::string mpa_rating);
-    void set_watched_count(int watched_count);
+    void increment_watched_count();
 
     // Display
     void display() const;

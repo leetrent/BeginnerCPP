@@ -34,15 +34,16 @@ int main()
 
 void add_movie(Movies &movies, string movie_name, string mpa_rating, int watched_count) {
     if ( movies.add_movie(movie_name, mpa_rating, watched_count)) {
-        cout << endl << movie_name << " added." << endl;
+        cout << movie_name << " added." << endl;
     } else {
-        cout << endl << movie_name << " already exists." << endl;
+        cout << movie_name << " already exists." << endl;
     }
 }
 void increment_watched(Movies &movies, string movie_name) {
     if ( movies.increment_watched_count(movie_name) ) {
-        cout << endl << movie_name << " watch count incremented" << endl;
+        cout << movie_name << " watch count incremented" << endl;
     } else {
-        cout << endl << movie_name << " not found " << endl;
+        cout << movie_name << " not found " << endl;
+        std::cout << "===================================" << std::endl;
     }
 }

@@ -32,19 +32,10 @@ int Movie::get_watched_count() const {
     return watched_count;
 }
 
-// Setters 
-void Movie::set_movie_name(std::string movie_name) {
-    this->movie_name = movie_name;
-}
-
-void Movie::set_mpa_rating(std::string mpa_rating) {
-    this->mpa_rating = mpa_rating;
-}
-
-void Movie::set_watched_count(int watched_count) {
-    this->watched_count = watched_count;
+void Movie::increment_watched_count() {
+    this->watched_count += 1;
 }
 
 void Movie::display() const {
-    std::cout << std::endl << "[" << movie_name << " | " << mpa_rating << " | " << watched_count << "]" << std::endl;
+    std::cout << "[" << this->movie_name << " | " << this->mpa_rating << " | " << this->watched_count << "]" << std::endl;
 }
