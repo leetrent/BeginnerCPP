@@ -4,6 +4,7 @@ using namespace std;
 
 void increment_watched(Movies &movies, string name);
 void add_movie(Movies &movies, string movie_name, string mpa_rating, int watched_count);
+void add_movie(Movies &movies, string movie_name, string mpa_rating);
 
 int main()
 {
@@ -29,11 +30,29 @@ int main()
     
     increment_watched(my_movies,"XXX");         // XXX not found
 
+    add_movie(my_movies, "Good Will Hunting", "PG-13"); 
+    add_movie(my_movies, "The Art of Racing in the Rain", "PG"); 
+
+    my_movies.display(); 
+
+    increment_watched(my_movies,"Good Will Hunting");                    // OK
+    increment_watched(my_movies,"The Art of Racing in the Rain"); 
+
+    my_movies.display(); 
+
     return 0;
 }
 
 void add_movie(Movies &movies, string movie_name, string mpa_rating, int watched_count) {
     if ( movies.add_movie(movie_name, mpa_rating, watched_count)) {
+        cout << movie_name << " added." << endl;
+    } else {
+        cout << movie_name << " already exists." << endl;
+    }
+}
+
+void add_movie(Movies &movies, string movie_name, string mpa_rating) {
+    if ( movies.add_movie(movie_name, mpa_rating)) {
         cout << movie_name << " added." << endl;
     } else {
         cout << movie_name << " already exists." << endl;

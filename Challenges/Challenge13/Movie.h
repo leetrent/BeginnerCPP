@@ -15,7 +15,7 @@ class Movie
     public:
 
     // Contructor (3 args)
-    Movie(std::string movie_name, std::string mpa_rating, int watched_count);
+    Movie(std::string movie_name, std::string mpa_rating, int watched_count = 0);
 
     // Copy constructor
     Movie(const Movie &source);
