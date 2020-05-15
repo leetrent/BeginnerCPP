@@ -8,7 +8,7 @@ class MyString
     
     public:
         MyString();
-        // MyString(const char *s);
+        //MyString(const char *s);
         // MyString(const MyString &source);
         // MyString(MyString &&source);
         // ~MyString();
