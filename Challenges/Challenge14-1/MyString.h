@@ -8,9 +8,12 @@ class MyString
         void init();
 
     public:
+        // Empty constructor
         MyString();
+        // One-arg constructor
         MyString(const char *s);
-        // MyString(const MyString &source);
+        // Copy constructor
+        MyString(const MyString &source);
         // MyString(MyString &&source);
         // ~MyString();
 };

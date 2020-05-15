@@ -3,6 +3,7 @@
 #include "MyString.h"
 using namespace std;
 
+// Empty constructor
 MyString::MyString() : str{nullptr}
 {
     this->init();
@@ -13,25 +14,41 @@ MyString::MyString() : str{nullptr}
     cout << "--------------------------------------------------"    << endl;
 }
 
+// One-arg constructor
 MyString::MyString(const char *s) : str{nullptr}
 {
-  if (s==nullptr)
-  {
-    this->init();
-  }
-  else
-  {
+    if (s==nullptr)
+    {
+        this->init();
+    }
+    else
+    {
     this->str = new char[strlen(s) + 1];
-    strcpy(this->str, s);
-  }
-  cout << "--------------------------------------------------"    << endl;
-  cout << "One-arg constructor"                                     << endl;
-  cout << "(*this->str): '" << this->str << "'"                  << endl;
-  cout << "--------------------------------------------------"    << endl;
+        strcpy(this->str, s);
+    }
+    cout << "--------------------------------------------------"  << endl;
+    cout << "One-arg constructor"                                 << endl;
+    cout << "(*this->str): '" << this->str << "'"                 << endl;
+    cout << "--------------------------------------------------"  << endl;
 }
+
+// Copy constructor
+MyString::MyString(const MyString &source) : str{nullptr}
+{
+    this->str = new char[strlen(source.str) + 1];
+    strcpy(this->str, source.str);
+
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Copy constructor"                                      << endl;
+    cout << "(source.str): '" << source.str << "'"                  << endl;
+    cout << "(*this->str): '" << this->str  << "'"                  << endl;
+    cout << "--------------------------------------------------"    << endl;
+
+}
+
 
 void MyString::init()
 {
-  this->str = new char[1];
-  *this->str = '\0';
+    this->str = new char[1];
+    *this->str = '\0';
 }
