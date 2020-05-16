@@ -14,7 +14,9 @@ class MyString
         MyString(const char *s);
         // Copy constructor
         MyString(const MyString &source);
-        // MyString(MyString &&source);
+        // Move constructor
+        MyString(MyString &&source);
+        // Destructor
         ~MyString();
 };
 
