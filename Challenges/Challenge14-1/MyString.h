@@ -15,7 +15,7 @@ class MyString
         // Copy constructor
         MyString(const MyString &source);
         // MyString(MyString &&source);
-        // ~MyString();
+        ~MyString();
 };
 
 #endif

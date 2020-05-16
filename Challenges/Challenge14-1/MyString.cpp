@@ -28,7 +28,7 @@ MyString::MyString(const char *s) : str{nullptr}
     }
     cout << "--------------------------------------------------"  << endl;
     cout << "One-arg constructor"                                 << endl;
-    cout << "(*this->str): '" << this->str << "'"                 << endl;
+    cout << "(this->str): '" << this->str << "'"                 << endl;
     cout << "--------------------------------------------------"  << endl;
 }
 
@@ -41,11 +41,23 @@ MyString::MyString(const MyString &source) : str{nullptr}
     cout << "--------------------------------------------------"    << endl;
     cout << "Copy constructor"                                      << endl;
     cout << "(source.str): '" << source.str << "'"                  << endl;
-    cout << "(*this->str): '" << this->str  << "'"                  << endl;
+    cout << "(this->str): '"  << this->str  << "'"                  << endl;
     cout << "--------------------------------------------------"    << endl;
 
 }
 
+// Destructor
+MyString::~MyString()
+{
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Destructor"                                            << endl;
+    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+
+    delete [] str;
+
+    cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
+    cout << "--------------------------------------------------"    << endl;
+}
 
 void MyString::init()
 {
