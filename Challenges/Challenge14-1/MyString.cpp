@@ -28,7 +28,7 @@ MyString::MyString(const char *s) : str{nullptr}
     }
     cout << "--------------------------------------------------"  << endl;
     cout << "One-arg constructor"                                 << endl;
-    cout << "(this->str): '" << this->str << "'"                 << endl;
+    cout << "(this->str): '" << this->str << "'"                  << endl;
     cout << "--------------------------------------------------"  << endl;
 }
 
@@ -55,7 +55,7 @@ MyString::MyString(MyString &&source) : str(source.str)
     cout << "(this->str): '"  << this->str  << "'"                  << endl;
 
     source.str = nullptr;
-    cout << "(source.str): '" << source.str << "'"                  << endl;    
+    cout << "(source.str): '" << source.str << "'"                  << endl;
     cout << "--------------------------------------------------"    << endl;
 
 }
@@ -73,6 +73,52 @@ MyString::~MyString()
     cout << "--------------------------------------------------"    << endl;
 }
 
+//////////////////////////////////////////////////
+// OPERATOR OVERLOADING:
+//////////////////////////////////////////////////
+
+// Copy assignment opeartor
+MyString &MyString::operator=(const MyString &rhs)
+{
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Copy assignment opeartor:"                             << endl;
+    cout << "rhs..: '" << &rhs     << "'"                          << endl;
+    cout << "this.: '" << this    << "'"                          << endl;
+    cout << "BEFORE: (rhs.str)..: '" << rhs.str   << "'"            << endl;
+    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+
+    if (this == &rhs)
+    {
+        cout << "Objects are equal, will not copy" << endl;
+        return *this;
+    }
+    delete [] this->str;
+
+    this->str = new char[strlen(rhs.str) + 1];
+    strcpy(this->str, rhs.str);
+
+    cout << "AFTER:  (rhs.str)..: '" << rhs.str    << "'"           << endl;
+    cout << "AFTER:  (this->str): '" << this->str << "'"            << endl;
+
+    cout << "--------------------------------------------------"    << endl;
+
+    return *this;
+}
+
+//////////////////////////////////////////////////
+// OTHER METHODS:
+//////////////////////////////////////////////////
+void MyString::display() const
+{
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Display:"                                               << endl;
+    cout << "['" << this->str << "' : " << strlen(this->str) << "]" << endl;
+    cout << "--------------------------------------------------"    << endl;
+}
+
+//////////////////////////////////////////////////
+// PRIVATE METHODS:
+//////////////////////////////////////////////////
 void MyString::init()
 {
     this->str = new char[1];

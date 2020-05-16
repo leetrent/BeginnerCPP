@@ -18,6 +18,20 @@ class MyString
         MyString(MyString &&source);
         // Destructor
         ~MyString();
+
+        //////////////////////////////////////////////////
+        // OPERATOR OVERLOADING
+        //////////////////////////////////////////////////
+        // Copy assignment operator
+        MyString &operator=(const MyString &rhs);
+
+        //////////////////////////////////////////////////
+        // OTHER METHODS:
+        //////////////////////////////////////////////////
+        void display() const;
+
+
+
 };
 
 #endif
