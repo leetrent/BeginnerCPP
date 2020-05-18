@@ -3,6 +3,8 @@
 
 class MyString
 {
+    friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
+    
     private:
         char *str;
         void init();
@@ -24,6 +26,9 @@ class MyString
         //////////////////////////////////////////////////
         // Copy assignment operator
         MyString &operator=(const MyString &rhs);
+        // Lowecase operator
+        MyString operator-() const;
+
 
         //////////////////////////////////////////////////
         // OTHER METHODS:

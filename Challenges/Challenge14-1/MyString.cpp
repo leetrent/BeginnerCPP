@@ -3,6 +3,13 @@
 #include "MyString.h"
 using namespace std;
 
+// Friend
+std::ostream &operator<<(std::ostream &os, const MyString &rhs)
+{
+    os << rhs.str;
+    return os;
+}
+
 // Empty constructor
 MyString::MyString() : str{nullptr}
 {
@@ -63,14 +70,14 @@ MyString::MyString(MyString &&source) : str(source.str)
 // Destructor
 MyString::~MyString()
 {
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Destructor"                                            << endl;
-    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Destructor"                                            << endl;
+    // cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
 
     delete [] str;
 
-    cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
-    cout << "--------------------------------------------------"    << endl;
+    // cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
+    // cout << "--------------------------------------------------"    << endl;
 }
 
 //////////////////////////////////////////////////
@@ -103,6 +110,20 @@ MyString &MyString::operator=(const MyString &rhs)
     cout << "--------------------------------------------------"    << endl;
 
     return *this;
+}
+
+// Lowercase operator
+MyString MyString::operator-() const
+{
+    char *buffer = new char[std::strlen(this->str) + 1];
+    std::strcpy(buffer, this->str);
+    for (size_t ii = 0; ii < std::strlen(buffer); ii++)
+    {
+        buffer[ii] = std::tolower(buffer[ii]);
+    }
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
 }
 
 //////////////////////////////////////////////////
