@@ -16,10 +16,20 @@ int main()
     // hello = hello;
     // hello = helloWorld;
 
-    MyString upperCase = MyString("LOWECASE ME");
-    MyString lowerCase = -upperCase;
-    cout << "upperCase: " << upperCase << endl;
-    cout << "lowerCase: " << lowerCase << endl;
+    // MyString upperCase = MyString("LOWECASE ME");
+    // MyString lowerCase = -upperCase;
+    // cout << "upperCase: " << upperCase << endl;
+    // cout << "lowerCase: " << lowerCase << endl;
+
+    MyString equal    = MyString("Equal");
+    MyString notEqual = MyString("Not Equal");
+
+    cout << boolalpha << endl;
+    cout << "(equal    == equal).....: " << (equal == equal)          << endl;
+    cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
+    cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
+    cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
+
 
     return 0;
 }

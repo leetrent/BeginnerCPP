@@ -4,7 +4,7 @@
 class MyString
 {
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
-    
+
     private:
         char *str;
         void init();
@@ -28,6 +28,8 @@ class MyString
         MyString &operator=(const MyString &rhs);
         // Lowecase operator
         MyString operator-() const;
+        // Equality operator
+        bool operator==(const MyString &rhs) const;
 
 
         //////////////////////////////////////////////////

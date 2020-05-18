@@ -126,6 +126,12 @@ MyString MyString::operator-() const
     return temp;
 }
 
+// Equality operator
+bool MyString::operator==(const MyString &rhs) const
+{
+    return (std::strcmp(this->str, rhs.str) == 0);
+}
+
 //////////////////////////////////////////////////
 // OTHER METHODS:
 //////////////////////////////////////////////////
