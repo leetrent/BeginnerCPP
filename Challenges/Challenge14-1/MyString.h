@@ -34,6 +34,8 @@ class MyString
         bool operator!=(const MyString &rhs) const;
         // Less than operator
         bool operator<(const MyString &rhs) const;
+        // Greater than operator
+        bool operator>(const MyString &rhs) const;
 
 
         //////////////////////////////////////////////////

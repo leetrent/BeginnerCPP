@@ -43,14 +43,9 @@ int main()
     cout << boolalpha << endl;
     cout << "(apple  < banana): " << (apple  < banana)  << endl;
     cout << "(banana < apple).: " << (banana < apple)   << endl;
-
-
-
-
-
-
-
-
+    cout << endl;
+    cout << "(apple  < banana): " << (apple  > banana)  << endl;
+    cout << "(banana > apple).: " << (banana > apple)   << endl;
 
     return 0;
 }

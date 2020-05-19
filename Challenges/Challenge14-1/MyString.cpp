@@ -144,6 +144,12 @@ bool MyString::operator<(const MyString &rhs) const
     return (std::strcmp(this->str, rhs.str) < 0);
 }
 
+// Greater than operator
+bool MyString::operator>(const MyString &rhs) const
+{
+    return (std::strcmp(this->str, rhs.str) > 0);
+}
+
 
 //////////////////////////////////////////////////
 // OTHER METHODS:
