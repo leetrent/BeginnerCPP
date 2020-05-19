@@ -21,20 +21,33 @@ int main()
     // cout << "upperCase: " << upperCase << endl;
     // cout << "lowerCase: " << lowerCase << endl;
 
-    MyString equal    = MyString("Equal");
-    MyString notEqual = MyString("Not Equal");
+    // MyString equal    = MyString("Equal");
+    // MyString notEqual = MyString("Not Equal");
+    //
+    // cout << boolalpha << endl;
+    // cout << "(equal    == equal).....: " << (equal == equal)          << endl;
+    // cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
+    // cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
+    // cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
+    // cout << endl;
+    // cout << boolalpha << endl;
+    // cout << "(equal    != equal).....: " << (equal    != equal)     << endl;
+    // cout << "(notEqual != notEqual)..: " << (notEqual != notEqual)  << endl;
+    // cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
+    // cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
+
+
+    MyString apple = MyString("Apple");
+    MyString banana = MyString("Banana");
 
     cout << boolalpha << endl;
-    cout << "(equal    == equal).....: " << (equal == equal)          << endl;
-    cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
-    cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
-    cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
-    cout << endl;
-    cout << boolalpha << endl;
-    cout << "(equal    != equal).....: " << (equal    != equal)     << endl;
-    cout << "(notEqual != notEqual)..: " << (notEqual != notEqual)  << endl;
-    cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
-    cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
+    cout << "(apple  < banana): " << (apple  < banana)  << endl;
+    cout << "(banana < apple).: " << (banana < apple)   << endl;
+
+
+
+
+
 
 
 
