@@ -126,6 +126,19 @@ MyString MyString::operator-() const
     return temp;
 }
 
+// Plus operator (concatentation)
+MyString MyString::operator+(const MyString &rhs) const
+{
+    char *buffer = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
+    std::strcpy(buffer, this->str);
+    std::   strcat(buffer, rhs.str);
+
+    MyString temp{buffer};
+    delete [] buffer;
+
+    return temp;
+}
+
 // Equality operator
 bool MyString::operator==(const MyString &rhs) const
 {
@@ -149,6 +162,8 @@ bool MyString::operator>(const MyString &rhs) const
 {
     return (std::strcmp(this->str, rhs.str) > 0);
 }
+
+
 
 
 //////////////////////////////////////////////////

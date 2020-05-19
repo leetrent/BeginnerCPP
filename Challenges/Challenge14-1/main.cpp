@@ -37,15 +37,24 @@ int main()
     // cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
 
 
-    MyString apple = MyString("Apple");
-    MyString banana = MyString("Banana");
+    // MyString apple = MyString("Apple");
+    // MyString banana = MyString("Banana");
+    //
+    // cout << boolalpha << endl;
+    // cout << "(apple  < banana): " << (apple  < banana)  << endl;
+    // cout << "(banana < apple).: " << (banana < apple)   << endl;
+    // cout << endl;
+    // cout << "(apple  < banana): " << (apple  > banana)  << endl;
+    // cout << "(banana > apple).: " << (banana > apple)   << endl;
 
-    cout << boolalpha << endl;
-    cout << "(apple  < banana): " << (apple  < banana)  << endl;
-    cout << "(banana < apple).: " << (banana < apple)   << endl;
-    cout << endl;
-    cout << "(apple  < banana): " << (apple  > banana)  << endl;
-    cout << "(banana > apple).: " << (banana > apple)   << endl;
+    MyString hello = MyString("Hello");
+    MyString world  = MyString(" World");
+    MyString helloWorld = hello + world;
+
+    cout << "'" << hello << "'" << endl;
+    cout << "'" << world << "'" << endl;
+    cout << "'" << helloWorld << "'" << endl;
+
 
     return 0;
 }
