@@ -30,6 +30,8 @@ class MyString
         MyString operator-() const;
         // Equality operator
         bool operator==(const MyString &rhs) const;
+        // Inequality operator
+        bool operator!=(const MyString &rhs) const;
 
 
         //////////////////////////////////////////////////

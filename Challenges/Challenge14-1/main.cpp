@@ -29,6 +29,14 @@ int main()
     cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
     cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
     cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
+    cout << endl;
+    cout << boolalpha << endl;
+    cout << "(equal    != equal).....: " << (equal    != equal)     << endl;
+    cout << "(notEqual != notEqual)..: " << (notEqual != notEqual)  << endl;
+    cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
+    cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
+
+
 
 
     return 0;
