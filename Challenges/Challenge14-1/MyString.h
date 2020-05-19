@@ -36,7 +36,7 @@ class MyString
         bool operator<(const MyString &rhs) const;
         // Greater than operator
         bool operator>(const MyString &rhs) const;
-        // Plust operator (concatentation)
+        // Plus operator (concatentation)
         MyString operator+(const MyString &rhs) const;
 
 
