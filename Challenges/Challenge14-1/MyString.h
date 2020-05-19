@@ -38,6 +38,8 @@ class MyString
         bool operator>(const MyString &rhs) const;
         // Plus operator (concatentation)
         MyString operator+(const MyString &rhs) const;
+        // Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
+        MyString operator+=(const MyString &rhs) const;
 
 
         //////////////////////////////////////////////////

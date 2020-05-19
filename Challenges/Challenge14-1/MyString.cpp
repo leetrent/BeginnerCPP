@@ -131,7 +131,20 @@ MyString MyString::operator+(const MyString &rhs) const
 {
     char *buffer = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
     std::strcpy(buffer, this->str);
-    std::   strcat(buffer, rhs.str);
+    std::strcat(buffer, rhs.str);
+
+    MyString temp{buffer};
+    delete [] buffer;
+
+    return temp;
+}
+
+// Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
+MyString MyString::operator+=(const MyString &rhs) const
+{
+    char *buffer = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
+    std::strcpy(buffer, this->str);
+    std::strcat(buffer, rhs.str);
 
     MyString temp{buffer};
     delete [] buffer;

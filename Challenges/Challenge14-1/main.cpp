@@ -47,13 +47,23 @@ int main()
     // cout << "(apple  < banana): " << (apple  > banana)  << endl;
     // cout << "(banana > apple).: " << (banana > apple)   << endl;
 
+    // MyString hello = MyString("Hello");
+    // MyString world  = MyString(" World");
+    // MyString helloWorld = hello + world;
+    //
+    // cout << "'" << hello << "'" << endl;
+    // cout << "'" << world << "'" << endl;
+    // cout << "'" << helloWorld << "'" << endl;
+
     MyString hello = MyString("Hello");
     MyString world  = MyString(" World");
-    MyString helloWorld = hello + world;
+    MyString helloWorld = hello += world;
 
     cout << "'" << hello << "'" << endl;
     cout << "'" << world << "'" << endl;
     cout << "'" << helloWorld << "'" << endl;
+
+
 
 
     return 0;
