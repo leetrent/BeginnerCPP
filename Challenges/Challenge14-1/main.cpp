@@ -56,14 +56,14 @@ int main()
     // cout << "'" << helloWorld << "'" << endl;
 
     MyString hello = MyString("Hello");
+    cout << "(hello): << ""'" << hello << "'" << endl;
+
     MyString world  = MyString(" World");
-    MyString helloWorld = hello += world;
+    cout << "(world): << ""'" << world << "'" << endl;
 
-    cout << "'" << hello << "'" << endl;
-    cout << "'" << world << "'" << endl;
-    cout << "'" << helloWorld << "'" << endl;
-
-
+    hello += world;
+    cout << "(hello): << ""'" << hello << "'" << endl;
+    cout << "(world): << ""'" << world << "'" << endl;
 
 
     return 0;

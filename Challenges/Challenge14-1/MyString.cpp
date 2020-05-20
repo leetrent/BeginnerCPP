@@ -30,7 +30,7 @@ MyString::MyString(const char *s) : str{nullptr}
     }
     else
     {
-    this->str = new char[strlen(s) + 1];
+        this->str = new char[strlen(s) + 1];
         strcpy(this->str, s);
     }
     cout << "--------------------------------------------------"  << endl;
@@ -50,7 +50,6 @@ MyString::MyString(const MyString &source) : str{nullptr}
     cout << "(source.str): '" << source.str << "'"                  << endl;
     cout << "(this->str): '"  << this->str  << "'"                  << endl;
     cout << "--------------------------------------------------"    << endl;
-
 }
 
 // Move constructor
@@ -64,20 +63,19 @@ MyString::MyString(MyString &&source) : str(source.str)
     source.str = nullptr;
     cout << "(source.str): '" << source.str << "'"                  << endl;
     cout << "--------------------------------------------------"    << endl;
-
 }
 
 // Destructor
 MyString::~MyString()
 {
-    // cout << "--------------------------------------------------"    << endl;
-    // cout << "Destructor"                                            << endl;
-    // cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Destructor"                                            << endl;
+    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
 
     delete [] str;
 
-    // cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
-    // cout << "--------------------------------------------------"    << endl;
+    cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
+    cout << "--------------------------------------------------"    << endl;
 }
 
 //////////////////////////////////////////////////
@@ -140,16 +138,9 @@ MyString MyString::operator+(const MyString &rhs) const
 }
 
 // Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
-MyString MyString::operator+=(const MyString &rhs) const
+void MyString::operator+=(const MyString &rhs)
 {
-    char *buffer = new char[std::strlen(this->str) + std::strlen(rhs.str) + 1];
-    std::strcpy(buffer, this->str);
-    std::strcat(buffer, rhs.str);
-
-    MyString temp{buffer};
-    delete [] buffer;
-
-    return temp;
+    *this = *this + rhs;
 }
 
 // Equality operator
@@ -175,9 +166,6 @@ bool MyString::operator>(const MyString &rhs) const
 {
     return (std::strcmp(this->str, rhs.str) > 0);
 }
-
-
-
 
 //////////////////////////////////////////////////
 // OTHER METHODS:

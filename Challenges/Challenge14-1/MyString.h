@@ -38,17 +38,17 @@ class MyString
         bool operator>(const MyString &rhs) const;
         // Plus operator (concatentation)
         MyString operator+(const MyString &rhs) const;
-        // Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
-        MyString operator+=(const MyString &rhs) const;
+        // Plus-equal (+=) operator
+        // (increment an instance of this class by the parameter on the right-hand side)
+        void operator+=(const MyString &rhs);
+        // Multiply operator (concatentate n number of times)
+        // MyString operator*(const MyString &rhs, size_t n) const;
 
 
         //////////////////////////////////////////////////
         // OTHER METHODS:
         //////////////////////////////////////////////////
         void display() const;
-
-
-
 };
 
 #endif
