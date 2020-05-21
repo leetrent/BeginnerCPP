@@ -68,14 +68,8 @@ int main()
     MyString multiplyMe{"12345"};
     MyString product = multiplyMe * 3;
 
-    cout << "(multiplyMe): << ""'" << multiplyMe << "'" << endl;
-    cout << "(product)...: << ""'" << product << "'" << endl;
-
-
-
-
-
-
+    cout << "(multiplyMe): << ""'" << multiplyMe    << "' (" << multiplyMe.length() << ")" << endl;
+    cout << "(product)...: << ""'" << product       << "' (" << product.length()    << ")" << endl;
 
     return 0;
 }

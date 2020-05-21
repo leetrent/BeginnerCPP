@@ -204,6 +204,10 @@ void MyString::display() const
     cout << "--------------------------------------------------"    << endl;
 }
 
+size_t MyString::length() const
+{
+    return (std::strlen(this->str));
+}
 //////////////////////////////////////////////////
 // PRIVATE METHODS:
 //////////////////////////////////////////////////

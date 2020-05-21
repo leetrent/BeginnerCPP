@@ -50,6 +50,7 @@ class MyString
         // OTHER METHODS:
         //////////////////////////////////////////////////
         void display() const;
+        size_t length() const;
 };
 
 #endif
