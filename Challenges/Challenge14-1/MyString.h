@@ -1,5 +1,6 @@
 #ifndef _MYSTRING_H_
 #define _MYSTRING_H_
+#include <iostream>
 
 class MyString
 {
@@ -42,7 +43,7 @@ class MyString
         // (increment an instance of this class by the parameter on the right-hand side)
         void operator+=(const MyString &rhs);
         // Multiply operator (concatentate n number of times)
-        // MyString operator*(const MyString &rhs, size_t n) const;
+        MyString operator*(size_t numTimes) const;
 
 
         //////////////////////////////////////////////////

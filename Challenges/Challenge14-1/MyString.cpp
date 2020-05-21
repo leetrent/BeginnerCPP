@@ -137,6 +137,18 @@ MyString MyString::operator+(const MyString &rhs) const
     return temp;
 }
 
+// Multiply operator (concatentate n number of times)
+MyString MyString::operator*(size_t numTimes) const
+{
+    MyString temp;
+    for ( size_t ii = 1; ii <= numTimes; ii++)
+    {
+        temp = temp + *this;
+    }
+    return temp;
+}
+
+
 // Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
 void MyString::operator+=(const MyString &rhs)
 {

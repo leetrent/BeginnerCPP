@@ -55,15 +55,26 @@ int main()
     // cout << "'" << world << "'" << endl;
     // cout << "'" << helloWorld << "'" << endl;
 
-    MyString hello = MyString("Hello");
-    cout << "(hello): << ""'" << hello << "'" << endl;
+    // MyString hello = MyString("Hello");
+    // cout << "(hello): << ""'" << hello << "'" << endl;
+    //
+    // MyString world  = MyString(" World");
+    // cout << "(world): << ""'" << world << "'" << endl;
+    //
+    // hello += world;
+    // cout << "(hello): << ""'" << hello << "'" << endl;
+    // cout << "(world): << ""'" << world << "'" << endl;
 
-    MyString world  = MyString(" World");
-    cout << "(world): << ""'" << world << "'" << endl;
+    MyString multiplyMe{"12345"};
+    MyString product = multiplyMe * 3;
 
-    hello += world;
-    cout << "(hello): << ""'" << hello << "'" << endl;
-    cout << "(world): << ""'" << world << "'" << endl;
+    cout << "(multiplyMe): << ""'" << multiplyMe << "'" << endl;
+    cout << "(product)...: << ""'" << product << "'" << endl;
+
+
+
+
+
 
 
     return 0;
