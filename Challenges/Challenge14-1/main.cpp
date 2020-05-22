@@ -65,11 +65,16 @@ int main()
     // cout << "(hello): << ""'" << hello << "'" << endl;
     // cout << "(world): << ""'" << world << "'" << endl;
 
-    MyString multiplyMe{"12345"};
-    MyString product = multiplyMe * 3;
+    // MyString multiplyMe{"12345"};
+    // MyString product = multiplyMe * 3;
+    //
+    // cout << "(multiplyMe): << ""'" << multiplyMe    << "' (" << multiplyMe.length() << ")" << endl;
+    // cout << "(product)...: << ""'" << product       << "' (" << product.length()    << ")" << endl;
 
-    cout << "(multiplyMe): << ""'" << multiplyMe    << "' (" << multiplyMe.length() << ")" << endl;
-    cout << "(product)...: << ""'" << product       << "' (" << product.length()    << ")" << endl;
+    MyString multiplyEqual{"ABCDEFG"};
+    cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
+    multiplyEqual *= 5;
+    cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
 
     return 0;
 }

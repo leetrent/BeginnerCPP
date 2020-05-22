@@ -44,7 +44,9 @@ class MyString
         void operator+=(const MyString &rhs);
         // Multiply operator (concatentate n number of times)
         MyString operator*(size_t numTimes) const;
-
+        // Multiply-equal (*=) operator
+        // (increment an instance of this class by the parameter on the right-hand side)
+        void operator*=(size_t numTimes);
 
         //////////////////////////////////////////////////
         // OTHER METHODS:

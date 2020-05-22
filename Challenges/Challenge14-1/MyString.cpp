@@ -151,7 +151,7 @@ MyString MyString::operator+(const MyString &rhs) const
 // Multiply operator (concatentate n number of times)
 MyString MyString::operator*(size_t numTimes) const
 {
-    char *buffer = new char[ (strlen(this->str) * numTimes) +1 ];
+    char *buffer = new char[ (strlen(this->str) * numTimes) + 1 ];
     for (size_t ii = 0; ii < numTimes; ii++)
     {
         std:strcat(buffer, this->str);
@@ -160,8 +160,17 @@ MyString MyString::operator*(size_t numTimes) const
     delete [] buffer;
     return temp;
 }
-
-
+// Multiply-equal (*=) operator
+// (increment an instance of this class by the parameter (numTimes))
+void MyString::operator*=(size_t numTimes)
+{
+    char *buffer = new char[(strlen(this->str) * numTimes) + 1];
+    for (size_t ii = 0; ii < numTimes; ii++)
+    {
+        std::strcat(buffer, this->str);
+    }
+    this->str = buffer;
+}
 
 // Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
 void MyString::operator+=(const MyString &rhs)
