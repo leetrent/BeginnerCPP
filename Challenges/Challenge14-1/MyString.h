@@ -47,6 +47,13 @@ class MyString
         // Multiply-equal (*=) operator
         // (increment an instance of this class by the parameter on the right-hand side)
         void operator*=(size_t numTimes);
+        // Pre-increment operator
+        //   - return this object with string uppercased
+        MyString &operator++();
+        // Post-increment operator
+        // 1. return this object with string unchanged
+        // 2. then lowercase it
+        MyString operator++(int);
 
         //////////////////////////////////////////////////
         // OTHER METHODS:

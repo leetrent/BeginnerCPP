@@ -15,10 +15,10 @@ MyString::MyString() : str{nullptr}
 {
     this->init();
 
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Empty constructor"                                     << endl;
-    cout << "(*this->str): '" << *this->str << "'"                  << endl;
-    cout << "--------------------------------------------------"    << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Empty constructor"                                     << endl;
+    // cout << "(*this->str): '" << *this->str << "'"                  << endl;
+    // cout << "--------------------------------------------------"    << endl;
 }
 
 // One-arg constructor
@@ -33,10 +33,10 @@ MyString::MyString(const char *s) : str{nullptr}
         this->str = new char[strlen(s) + 1];
         strcpy(this->str, s);
     }
-    cout << "--------------------------------------------------"  << endl;
-    cout << "One-arg constructor"                                 << endl;
-    cout << "(this->str): '" << this->str << "'"                  << endl;
-    cout << "--------------------------------------------------"  << endl;
+    // cout << "--------------------------------------------------"  << endl;
+    // cout << "One-arg constructor"                                 << endl;
+    // cout << "(this->str): '" << this->str << "'"                  << endl;
+    // cout << "--------------------------------------------------"  << endl;
 }
 
 // Copy constructor
@@ -45,37 +45,38 @@ MyString::MyString(const MyString &source) : str{nullptr}
     this->str = new char[strlen(source.str) + 1];
     strcpy(this->str, source.str);
 
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Copy constructor"                                      << endl;
-    cout << "(source.str): '" << source.str << "'"                  << endl;
-    cout << "(this->str): '"  << this->str  << "'"                  << endl;
-    cout << "--------------------------------------------------"    << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Copy constructor"                                      << endl;
+    // cout << "(source.str): '" << source.str << "'"                  << endl;
+    // cout << "(this->str): '"  << this->str  << "'"                  << endl;
+    // cout << "--------------------------------------------------"    << endl;
 }
 
 // Move constructor
 MyString::MyString(MyString &&source) : str(source.str)
 {
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Move constructor"                                      << endl;
-    cout << "(source.str): '" << source.str << "'"                  << endl;
-    cout << "(this->str): '"  << this->str  << "'"                  << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Move constructor"                                      << endl;
+    // cout << "(source.str): '" << source.str << "'"                  << endl;
+    // cout << "(this->str): '"  << this->str  << "'"                  << endl;
 
     source.str = nullptr;
-    cout << "(source.str): '" << source.str << "'"                  << endl;
-    cout << "--------------------------------------------------"    << endl;
+
+    // cout << "(source.str): '" << source.str << "'"                  << endl;
+    // cout << "--------------------------------------------------"    << endl;
 }
 
 // Destructor
 MyString::~MyString()
 {
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Destructor"                                            << endl;
-    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Destructor"                                            << endl;
+    // cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
 
     delete [] str;
 
-    cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
-    cout << "--------------------------------------------------"    << endl;
+    // cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
+    // cout << "--------------------------------------------------"    << endl;
 }
 
 //////////////////////////////////////////////////
@@ -85,12 +86,12 @@ MyString::~MyString()
 // Copy assignment opeartor
 MyString &MyString::operator=(const MyString &rhs)
 {
-    cout << "--------------------------------------------------"    << endl;
-    cout << "Copy assignment opeartor:"                             << endl;
-    cout << "rhs..: '" << &rhs     << "'"                          << endl;
-    cout << "this.: '" << this    << "'"                          << endl;
-    cout << "BEFORE: (rhs.str)..: '" << rhs.str   << "'"            << endl;
-    cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+    // cout << "--------------------------------------------------"    << endl;
+    // cout << "Copy assignment opeartor:"                             << endl;
+    // cout << "rhs..: '" << &rhs     << "'"                          << endl;
+    // cout << "this.: '" << this    << "'"                          << endl;
+    // cout << "BEFORE: (rhs.str)..: '" << rhs.str   << "'"            << endl;
+    // cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
 
     if (this == &rhs)
     {
@@ -102,10 +103,10 @@ MyString &MyString::operator=(const MyString &rhs)
     this->str = new char[strlen(rhs.str) + 1];
     strcpy(this->str, rhs.str);
 
-    cout << "AFTER:  (rhs.str)..: '" << rhs.str    << "'"           << endl;
-    cout << "AFTER:  (this->str): '" << this->str << "'"            << endl;
-
-    cout << "--------------------------------------------------"    << endl;
+    // cout << "AFTER:  (rhs.str)..: '" << rhs.str    << "'"           << endl;
+    // cout << "AFTER:  (this->str): '" << this->str << "'"            << endl;
+    //
+    // cout << "--------------------------------------------------"    << endl;
 
     return *this;
 }
@@ -121,6 +122,27 @@ MyString MyString::operator-() const
     }
     MyString temp{buffer};
     delete [] buffer;
+    return temp;
+}
+
+// Pre-increment operator
+//   - return this object with string uppercased
+MyString &MyString::operator++()
+{
+    for (size_t ii = 0; ii < std::strlen(this->str); ii++)
+    {
+        this->str[ii] = std::toupper(str[ii]);
+    }
+    return *this;
+}
+
+// Post-increment operator
+// 1. return this object with string unchanged
+// 2. then lowercase it
+MyString MyString::operator++(int)
+{
+    MyString temp(this->str);
+    operator++();
     return temp;
 }
 

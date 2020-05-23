@@ -71,10 +71,20 @@ int main()
     // cout << "(multiplyMe): << ""'" << multiplyMe    << "' (" << multiplyMe.length() << ")" << endl;
     // cout << "(product)...: << ""'" << product       << "' (" << product.length()    << ")" << endl;
 
-    MyString multiplyEqual{"ABCDEFG"};
-    cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
-    multiplyEqual *= 5;
-    cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
+    // MyString multiplyEqual{"ABCDEFG"};
+    // cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
+    // multiplyEqual *= 5;
+    // cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
+
+    MyString preIncrement{"preincrement"};
+    cout << "(preIncrement)..:  " << preIncrement     << endl;
+    cout << "(++preIncrement):  " << ++preIncrement   << endl;
+
+    MyString postIncrement{"postincrement"};
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+    cout << "(postIncrement++):  " << postIncrement++   << endl;
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+
 
     return 0;
 }
