@@ -16,8 +16,8 @@ class MyString
         MyString();
         // One-arg constructor
         MyString(const char *s);
-        // // Copy constructor
-        // MyString(const MyString &source);
+        // Copy constructor
+        MyString(const MyString &source);
         // // Move constructor
         // MyString(MyString &&source);
         // // Destructor
