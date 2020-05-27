@@ -81,6 +81,19 @@ MyString::MyString(MyString &&source) : str(source.str)
     cout << "--------------------------------------------------"    << endl;
 }
 
+// Destructor
+MyString::~MyString()
+{
+    if (this->str != nullptr)
+    {
+        cout << "--------------------------------------------------"    << endl;
+        cout << "Destructor for:"                                       << endl;
+        cout << "(this->str): '"  << this->str  << "'"                  << endl;
+        cout << "--------------------------------------------------"    << endl;
+    }
+    delete [] str;
+}
+
 
 
 //////////////////////////////////////////////////

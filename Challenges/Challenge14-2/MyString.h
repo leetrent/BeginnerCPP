@@ -20,7 +20,7 @@ class MyString
         MyString(const MyString &source);
         // Move constructor
         MyString(MyString &&source);
-        // // Destructor
-        // ~MyString();
+        // Destructor
+        ~MyString();
 };
 #endif
