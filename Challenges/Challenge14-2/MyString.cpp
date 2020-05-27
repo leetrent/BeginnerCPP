@@ -64,6 +64,25 @@ MyString::MyString(const MyString &source) : str{nullptr}
     cout << "--------------------------------------------------"    << endl;
 }
 
+// Move constructor
+MyString::MyString(MyString &&source) : str(source.str)
+{
+    cout << "--------------------------------------------------"    << endl;
+    cout << "Move constructor:"                                     << endl;
+    cout << "(source)....: '" << source     << "'"                  << endl;
+    //cout << "(&&source)..: '" << &&source   << "'"                  << endl;
+    cout << "(source.str): '" << source.str << "'"                  << endl;
+    cout << "(this->str): '"  << this->str  << "'"                  << endl;
+
+    source.str = nullptr;
+
+    //cout << "(source == nullptr)....: " << (source == nullptr)      << endl;
+    cout << "(source.str == nullptr): " << (source.str == nullptr)  << endl;
+    cout << "--------------------------------------------------"    << endl;
+}
+
+
+
 //////////////////////////////////////////////////
 // PRIVATE METHODS:
 //////////////////////////////////////////////////
