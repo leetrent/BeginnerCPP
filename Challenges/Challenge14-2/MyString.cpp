@@ -21,6 +21,7 @@ MyString::MyString() : str{nullptr}
 
     cout << "--------------------------------------------------"    << endl;
     cout << "Empty constructor (AFTER INIT)"                        << endl;
+    cout << "(this->str == nullptr): " << (this->str == nullptr)    << endl;
     cout << "(this->str).: '" << this->str  << "'"                  << endl;
     cout << "(*this->str): '" << *this->str << "'"                  << endl;
     cout << "--------------------------------------------------"    << endl;
