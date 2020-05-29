@@ -91,6 +91,10 @@ MyString::~MyString()
         cout << "(this->str): '"  << this->str  << "'"                  << endl;
         cout << "--------------------------------------------------"    << endl;
     }
+
+    // cout << "Destructor for:"                                       << endl;
+    // cout << "(this->str): '"  << this->str  << "'"                  << endl;
+
     delete [] str;
 }
 
