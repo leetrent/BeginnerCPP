@@ -93,14 +93,18 @@ MyString::MyString(MyString &&source) : str(source.str)
 // Destructor
 MyString::~MyString()
 {
-    // cout << "--------------------------------------------------"    << endl;
-    // cout << "Destructor"                                            << endl;
-    // cout << "BEFORE: (this->str): '" << this->str << "'"            << endl;
+    if (this->str != nullptr)
+    {
+        cout << "--------------------------------------------------"    << endl;
+        cout << "Destructor for:"                                       << endl;
+        cout << "(this->str): '"  << this->str  << "'"                  << endl;
+        cout << "--------------------------------------------------"    << endl;
+    }
 
-    delete [] str;
+    // cout << "Destructor for:"                                       << endl;
+    // cout << "(this->str): '"  << this->str  << "'"                  << endl;
 
-    // cout << " AFTER: (this->str): '" << this->str << "'"            << endl;
-    // cout << "--------------------------------------------------"    << endl;
+    delete [] this->str;
 }
 
 //////////////////////////////////////////////////
