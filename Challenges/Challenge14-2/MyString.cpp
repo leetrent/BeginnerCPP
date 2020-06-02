@@ -124,3 +124,14 @@ MyString operator-(const MyString &obj)
     delete [] buffer;
     return temp;
 }
+
+// Concatenation
+MyString operator+(const MyString &lhs, const MyString &rhs)
+{
+    char *buffer = new char[std::strlen(lhs.str) + std::strlen(rhs.str + 1)];
+    std::strcpy(buffer, lhs.str);
+    std::strcat(buffer, rhs.str);
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
+}

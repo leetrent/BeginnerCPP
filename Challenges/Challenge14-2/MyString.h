@@ -5,8 +5,13 @@
 
 class MyString
 {
-    // friend:
+    //////////////////////////////////////////////////////////////////
+    // OVERLOAD OPERATORS (FRIENDS):
+    //////////////////////////////////////////////////////////////////
+    // Lowercase
     friend MyString operator-(const MyString &obj);
+    // Concatenation
+    friend MyString operator+(const MyString &lhs, const MyString &rhs);
 
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 
