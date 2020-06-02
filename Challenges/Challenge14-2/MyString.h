@@ -6,6 +6,8 @@
 class MyString
 {
     // friend:
+    friend MyString operator-(const MyString &obj);
+
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 
     private:

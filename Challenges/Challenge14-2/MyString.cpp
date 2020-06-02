@@ -99,8 +99,6 @@ MyString::~MyString()
     delete [] str;
 }
 
-
-
 //////////////////////////////////////////////////
 // PRIVATE METHODS:
 //////////////////////////////////////////////////
@@ -108,4 +106,21 @@ void MyString::init()
 {
     this->str = new char[1];
     *this->str = '\0';
+}
+
+//////////////////////////////////////////////////
+// OPERATOR OVERLOADING (FRIENDS):
+//////////////////////////////////////////////////
+// Lowercase
+MyString operator-(const MyString &obj)
+{
+    char *buffer = new char[std::strlen(obj.str) + 1];
+    std::strcpy(buffer, obj.str);
+    for (size_t ii = 0; ii < std::strlen(buffer); ii++)
+    {
+        buffer[ii] = std::tolower(buffer[ii]);
+    }
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
 }

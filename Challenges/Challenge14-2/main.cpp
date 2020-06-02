@@ -28,8 +28,16 @@ int main()
     constuctorCallCount++;
     cout << "(moveVec[0]): '" << moveVec[0] << "'" << endl;
 
+    MyString upperCase = MyString("LOWECASE ME");
+    constuctorCallCount++;
+    MyString lowerCase = -upperCase;
+    constuctorCallCount++;
+    cout << "upperCase: " << upperCase << endl;
+    cout << "lowerCase: " << lowerCase << endl;
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
     // cout << "--------------------------------------------------"    << endl;
+
     return 0;
 }
