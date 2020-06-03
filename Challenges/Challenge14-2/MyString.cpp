@@ -124,7 +124,6 @@ MyString operator-(const MyString &obj)
     delete [] buffer;
     return temp;
 }
-
 // Concatenation
 MyString operator+(const MyString &lhs, const MyString &rhs)
 {
@@ -134,4 +133,9 @@ MyString operator+(const MyString &lhs, const MyString &rhs)
     MyString temp{buffer};
     delete [] buffer;
     return temp;
+}
+//Equality
+bool operator==(const MyString &lhs, const MyString &rhs)
+{
+    return (std::strcmp(lhs.str, rhs.str) == 0);
 }

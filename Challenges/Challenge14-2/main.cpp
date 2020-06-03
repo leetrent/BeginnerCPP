@@ -46,6 +46,20 @@ int main()
     cout << "concat2: '" << concat2 << "'" << endl;
     cout << "concat3: '" << concat3 << "'" << endl;
 
+    MyString equal = MyString("Equal");
+    constuctorCallCount++;
+    MyString notEqual = MyString("Not Equal");
+    constuctorCallCount++;
+
+    cout << "(equal    == equal).....: " << (equal == equal)          << endl;
+    cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
+    cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
+    cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
+
+
+
+
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
     // cout << "--------------------------------------------------"    << endl;
