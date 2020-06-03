@@ -144,3 +144,8 @@ bool operator!=(const MyString &lhs, const MyString &rhs)
 {
     return (std::strcmp(lhs.str, rhs.str) != 0);
 }
+//Less than
+bool operator<(const MyString &lhs, const MyString &rhs)
+{
+    return (std::strcmp(lhs.str, rhs.str) < 0);
+}

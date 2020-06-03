@@ -16,6 +16,8 @@ class MyString
     friend bool operator==(const MyString &lhs, const MyString &rhs);
     // Inequality
     friend bool operator!=(const MyString &lhs, const MyString &rhs);
+    // Less than
+    friend bool operator<(const MyString &lhs, const MyString &rhs);
 
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 

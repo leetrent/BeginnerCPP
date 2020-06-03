@@ -61,6 +61,13 @@ int main()
     cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
     cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
 
+    MyString lessThen ("apple");
+    constuctorCallCount++;
+    MyString greaterThen("banana");
+    constuctorCallCount++;
+
+    cout << "(" << lessThen << " < " << greaterThen << "): " << (lessThen < greaterThen)  << endl;
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
     // cout << "--------------------------------------------------"    << endl;
