@@ -72,6 +72,14 @@ int main()
     cout << "(" << greaterThan << " < " << lessThan << "): " << (greaterThan < lessThan)    << endl;
     cout << "(" << greaterThan << " > " << lessThan << "): " << (greaterThan > lessThan)    << endl;
 
+    MyString plusEqualOne("Plus Equal 1");
+    constuctorCallCount++;
+    MyString plusEqualTwo("Plus Equal 2");
+    constuctorCallCount++;
+    cout << "(" << plusEqualOne << " += " << plusEqualTwo << ")";
+    plusEqualOne += plusEqualTwo;
+    cout << " = " << plusEqualOne << endl;
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
     // cout << "--------------------------------------------------"    << endl;

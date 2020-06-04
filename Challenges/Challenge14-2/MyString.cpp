@@ -154,3 +154,11 @@ bool operator>(const MyString &lhs, const MyString &rhs)
 {
     return (std::strcmp(lhs.str, rhs.str) > 0);
 }
+//Concatenation
+void operator+=(MyString &lhs, const MyString &rhs)
+{
+    char *buffer = new char[std::strlen(lhs.str) + std::strlen(rhs.str + 1)];
+    std::strcpy(buffer, lhs.str);
+    std::strcat(buffer, rhs.str);
+    lhs.str = buffer;
+}
