@@ -20,9 +20,10 @@ class MyString
     friend bool operator<(const MyString &lhs, const MyString &rhs);
     // Greater than
     friend bool operator>(const MyString &lhs, const MyString &rhs);
-    //Concatenation
+    // Plus-Equal (Concatenation)
     friend void operator+=(MyString &lhs, const MyString &rhs);
-
+    // Multiplication (Concatenation n times)
+    friend MyString operator*(const MyString &lhs, unsigned int numTimes);
 
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 

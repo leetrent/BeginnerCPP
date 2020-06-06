@@ -80,6 +80,11 @@ int main()
     plusEqualOne += plusEqualTwo;
     cout << " = " << plusEqualOne << endl;
 
+    MyString multipylMe{"Multiply Me"};
+    cout << "(" << multipylMe << " * " << 3 << "): " << (multipylMe * 10) << endl;
+
+
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
     // cout << "--------------------------------------------------"    << endl;

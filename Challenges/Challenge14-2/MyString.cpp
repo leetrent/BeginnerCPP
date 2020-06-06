@@ -162,3 +162,16 @@ void operator+=(MyString &lhs, const MyString &rhs)
     std::strcat(buffer, rhs.str);
     lhs.str = buffer;
 }
+
+// Multiplication (Concatenation n times)
+MyString operator*(const MyString &lhs, unsigned int numTimes)
+{
+    char *buffer = new char [ (strlen(lhs.str) * numTimes) + 1 ];
+    for ( size_t ii = 0; ii < numTimes; ii++ )
+    {
+        std:strcat(buffer, lhs.str);
+    }
+    MyString temp{buffer};
+    delete [] buffer;
+    return temp;
+}
