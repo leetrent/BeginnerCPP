@@ -197,3 +197,12 @@ MyString &operator++(MyString &obj)
     }
     return obj;
 }
+// Post-increment operator
+// 1. return this object with string unchanged
+// 2. then lowercase it
+MyString operator++(MyString &obj, int)
+{
+    MyString temp{obj};
+    ++obj;
+    return temp;
+}

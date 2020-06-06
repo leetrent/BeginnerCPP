@@ -95,6 +95,13 @@ int main()
     cout << "(preIncrement)..:  " << preIncrement     << endl;
     cout << "(++preIncrement):  " << ++preIncrement   << endl;
 
+    MyString postIncrement{"postincrement"};
+    constuctorCallCount++;
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+    cout << "(postIncrement++):  " << postIncrement++   << endl;
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+
+
 
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
