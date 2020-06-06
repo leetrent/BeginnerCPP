@@ -1,91 +1,11 @@
 #include <iostream>
-#import <vector>
+#include <vector>
 #include "MyString.h"
-using namespace std;
 
+using namespace std;
 
 int main()
 {
-    // MyString ms1 = MyString();
-    // MyString ms2 = MyString("Lee");
-    // MyString ms3 = ms2;
-    // MyString m4 = "Dearfoam";
-    //
-    // MyString hello      = MyString("Hello");
-    // MyString helloWorld = MyString("Hello World");
-    //
-    // hello = hello;
-    // hello = helloWorld;
-
-    // MyString upperCase = MyString("LOWECASE ME");
-    // MyString lowerCase = -upperCase;
-    // cout << "upperCase: " << upperCase << endl;
-    // cout << "lowerCase: " << lowerCase << endl;
-
-    // MyString equal    = MyString("Equal");
-    // MyString notEqual = MyString("Not Equal");
-    //
-    // cout << boolalpha << endl;
-    // cout << "(equal    == equal).....: " << (equal == equal)          << endl;
-    // cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)    << endl;
-    // cout << "(equal    == notEqual)..: " << (equal == notEqual)       << endl;
-    // cout << "(notEqual == equal).....: " << (notEqual == equal)       << endl;
-    // cout << endl;
-    // cout << boolalpha << endl;
-    // cout << "(equal    != equal).....: " << (equal    != equal)     << endl;
-    // cout << "(notEqual != notEqual)..: " << (notEqual != notEqual)  << endl;
-    // cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
-    // cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
-
-
-    // MyString apple = MyString("Apple");
-    // MyString banana = MyString("Banana");
-    //
-    // cout << boolalpha << endl;
-    // cout << "(apple  < banana): " << (apple  < banana)  << endl;
-    // cout << "(banana < apple).: " << (banana < apple)   << endl;
-    // cout << endl;
-    // cout << "(apple  < banana): " << (apple  > banana)  << endl;
-    // cout << "(banana > apple).: " << (banana > apple)   << endl;
-
-    // MyString hello = MyString("Hello");
-    // MyString world  = MyString(" World");
-    // MyString helloWorld = hello + world;
-    //
-    // cout << "'" << hello << "'" << endl;
-    // cout << "'" << world << "'" << endl;
-    // cout << "'" << helloWorld << "'" << endl;
-
-    // MyString hello = MyString("Hello");
-    // cout << "(hello): << ""'" << hello << "'" << endl;
-    //
-    // MyString world  = MyString(" World");
-    // cout << "(world): << ""'" << world << "'" << endl;
-    //
-    // hello += world;
-    // cout << "(hello): << ""'" << hello << "'" << endl;
-    // cout << "(world): << ""'" << world << "'" << endl;
-
-    // MyString multiplyMe{"12345"};
-    // MyString product = multiplyMe * 3;
-    //
-    // cout << "(multiplyMe): << ""'" << multiplyMe    << "' (" << multiplyMe.length() << ")" << endl;
-    // cout << "(product)...: << ""'" << product       << "' (" << product.length()    << ")" << endl;
-
-    // MyString multiplyEqual{"ABCDEFG"};
-    // cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
-    // multiplyEqual *= 5;
-    // cout << "(multiplyEqual): << ""'" << multiplyEqual    << "' (" << multiplyEqual.length() << ")" << endl;
-
-    // MyString preIncrement{"preincrement"};
-    // cout << "(preIncrement)..:  " << preIncrement     << endl;
-    // cout << "(++preIncrement):  " << ++preIncrement   << endl;
-    //
-    // MyString postIncrement{"postincrement"};
-    // cout << "(postIncrement)..:  " << postIncrement     << endl;
-    // cout << "(postIncrement++):  " << postIncrement++   << endl;
-    // cout << "(postIncrement)..:  " << postIncrement     << endl;
-
     unsigned int constuctorCallCount = 0;
 
     MyString empty;
@@ -108,11 +28,84 @@ int main()
     constuctorCallCount++;
     cout << "(moveVec[0]): '" << moveVec[0] << "'" << endl;
 
+    MyString upperCase = MyString("LOWECASE ME");
+    constuctorCallCount++;
+    MyString lowerCase = -upperCase;
+    constuctorCallCount++;
+    cout << "upperCase: " << upperCase << endl;
+    cout << "lowerCase: " << lowerCase << endl;
+
+    MyString concat1 = MyString("Concat 1;");
+    constuctorCallCount++;
+    MyString concat2 = MyString("Concat 2;");
+    constuctorCallCount++;
+    MyString concat3 = concat1 + concat2;
+    constuctorCallCount++;
+
+    cout << "concat1: '" << concat1 << "'" << endl;
+    cout << "concat2: '" << concat2 << "'" << endl;
+    cout << "concat3: '" << concat3 << "'" << endl;
+
+    MyString equal = MyString("Equal");
+    constuctorCallCount++;
+    MyString notEqual = MyString("Not Equal");
+    constuctorCallCount++;
+
+    cout << "(equal    == equal).....: " << (equal == equal)        << endl;
+    cout << "(notEqual == notEqual)..: " << (notEqual == notEqual)  << endl;
+    cout << "(equal    == notEqual)..: " << (equal == notEqual)     << endl;
+    cout << "(notEqual == equal).....: " << (notEqual == equal)     << endl;
+    cout << "--------------------------------------------------"    << endl;
+    cout << "(equal    != equal).....: " << (equal    != equal)     << endl;
+    cout << "(notEqual != notEqual)..: " << (notEqual != notEqual)  << endl;
+    cout << "(equal    != notEqual)..: " << (equal    != notEqual)  << endl;
+    cout << "(notEqual != equal).....: " << (notEqual != equal)     << endl;
+
+    MyString lessThan ("apple");
+    constuctorCallCount++;
+    MyString greaterThan("banana");
+    constuctorCallCount++;
+
+    cout << "(" << lessThan << " < " << greaterThan << "): " << (lessThan < greaterThan)    << endl;
+    cout << "(" << lessThan << " > " << greaterThan << "): " << (lessThan > greaterThan)    << endl;
+    cout << "--------------------------------------------------"                            << endl;
+    cout << "(" << greaterThan << " < " << lessThan << "): " << (greaterThan < lessThan)    << endl;
+    cout << "(" << greaterThan << " > " << lessThan << "): " << (greaterThan > lessThan)    << endl;
+
+    MyString plusEqualOne("Plus Equal 1");
+    constuctorCallCount++;
+    MyString plusEqualTwo("Plus Equal 2");
+    constuctorCallCount++;
+    cout << "(" << plusEqualOne << " += " << plusEqualTwo << ")";
+    plusEqualOne += plusEqualTwo;
+    cout << " = " << plusEqualOne << endl;
+
+    MyString multipylMe{"|Multiply Me| "};
+    constuctorCallCount++;
+    cout << "(" << multipylMe << " * " << 3 << "): " << (multipylMe * 10) << endl;
+
+    MyString multiplyEqual{"|Multiply Equal| "};
+    constuctorCallCount++;
+    cout << multiplyEqual << " (BEFORE)" << endl;
+    multiplyEqual *= 5;
+    cout << multiplyEqual << " (AFTER)" << endl;
+
+    MyString preIncrement{"preincrement"};
+    constuctorCallCount++;
+    cout << "(preIncrement)..:  " << preIncrement     << endl;
+    cout << "(++preIncrement):  " << ++preIncrement   << endl;
+
+    MyString postIncrement{"postincrement"};
+    constuctorCallCount++;
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+    cout << "(postIncrement++):  " << postIncrement++   << endl;
+    cout << "(postIncrement)..:  " << postIncrement     << endl;
+
+
+
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;
-
-
-
+    // cout << "--------------------------------------------------"    << endl;
 
     return 0;
 }
