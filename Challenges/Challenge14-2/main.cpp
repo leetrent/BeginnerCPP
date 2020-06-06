@@ -85,9 +85,16 @@ int main()
     cout << "(" << multipylMe << " * " << 3 << "): " << (multipylMe * 10) << endl;
 
     MyString multiplyEqual{"|Multiply Equal| "};
+    constuctorCallCount++;
     cout << multiplyEqual << " (BEFORE)" << endl;
     multiplyEqual *= 5;
     cout << multiplyEqual << " (AFTER)" << endl;
+
+    MyString preIncrement{"preincrement"};
+    constuctorCallCount++;
+    cout << "(preIncrement)..:  " << preIncrement     << endl;
+    cout << "(++preIncrement):  " << ++preIncrement   << endl;
+
 
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;

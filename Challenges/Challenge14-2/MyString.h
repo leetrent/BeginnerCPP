@@ -26,6 +26,13 @@ class MyString
     friend MyString operator*(const MyString &lhs, unsigned int numTimes);
     // Multiply-Equal (Concatenation n times):
     friend void operator*=(MyString &lhs, unsigned int numTimes);
+    // Pre-increment operator
+    //   - return this object with string uppercased
+    friend MyString &operator++(MyString &obj);
+    // Post-increment operator
+    // 1. return this object with string unchanged
+    // 2. then lowercase it
+    friend MyString operator++(MyString &obj, int);
 
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 

@@ -186,3 +186,14 @@ void operator*=(MyString &lhs, unsigned int numTimes)
     }
     lhs.str = buffer;
 }
+
+// Pre-increment operator
+//   - return this object with string uppercased
+MyString &operator++(MyString &obj)
+{
+    for (size_t ii = 0; ii < std::strlen(obj.str); ii++ )
+    {
+        obj.str[ii] = std::toupper(obj.str[ii]);
+    }
+    return obj;
+}
