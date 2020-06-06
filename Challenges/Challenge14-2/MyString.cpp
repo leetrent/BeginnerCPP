@@ -175,3 +175,14 @@ MyString operator*(const MyString &lhs, unsigned int numTimes)
     delete [] buffer;
     return temp;
 }
+
+// Multiply-Equal (Concatenation n times):
+void operator*=(MyString &lhs, unsigned int numTimes)
+{
+    char *buffer = new char[ (strlen(lhs.str) * numTimes) + 1 ];
+    for (size_t ii{0}; ii < numTimes; ii++)
+    {
+        std::strcat(buffer, lhs.str);
+    }
+    lhs.str = buffer;
+}

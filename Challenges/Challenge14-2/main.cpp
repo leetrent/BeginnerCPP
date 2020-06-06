@@ -80,10 +80,14 @@ int main()
     plusEqualOne += plusEqualTwo;
     cout << " = " << plusEqualOne << endl;
 
-    MyString multipylMe{"Multiply Me"};
+    MyString multipylMe{"|Multiply Me| "};
+    constuctorCallCount++;
     cout << "(" << multipylMe << " * " << 3 << "): " << (multipylMe * 10) << endl;
 
-
+    MyString multiplyEqual{"|Multiply Equal| "};
+    cout << multiplyEqual << " (BEFORE)" << endl;
+    multiplyEqual *= 5;
+    cout << multiplyEqual << " (AFTER)" << endl;
 
     cout << "--------------------------------------------------"    << endl;
     cout << "(constuctorCallCount): " << constuctorCallCount        << endl;

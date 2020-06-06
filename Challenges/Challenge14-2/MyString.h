@@ -24,6 +24,8 @@ class MyString
     friend void operator+=(MyString &lhs, const MyString &rhs);
     // Multiplication (Concatenation n times)
     friend MyString operator*(const MyString &lhs, unsigned int numTimes);
+    // Multiply-Equal (Concatenation n times):
+    friend void operator*=(MyString &lhs, unsigned int numTimes);
 
     friend std::ostream &operator<<(std::ostream &os, const MyString &rhs);
 
