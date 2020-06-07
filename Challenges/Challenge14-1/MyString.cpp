@@ -184,45 +184,58 @@ MyString MyString::operator+(const MyString &rhs) const
     return temp;
 }
 
-// Multiply operator (concatentate n number of times)
-// MyString MyString::operator*(size_t numTimes) const
-// {
-//     MyString temp;
-//     for ( size_t ii = 1; ii <= numTimes; ii++)
-//     {
-//         temp = temp + *this;
-//     }
-//     return temp;
-// }
+// Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
+void MyString::operator+=(const MyString &rhs)
+{
+    *this = *this + rhs;
+}
 
 // Multiply operator (concatentate n number of times)
 MyString MyString::operator*(size_t numTimes) const
 {
-    char *buffer = new char[ (strlen(this->str) * numTimes) + 1 ];
-    for (size_t ii = 0; ii < numTimes; ii++)
+    /////////////////////////////////////////////////////////////////
+    // Solution #1:
+    /////////////////////////////////////////////////////////////////
+    // char *buffer = new char[ (strlen(this->str) * numTimes) + 1 ];
+    // for (size_t ii = 0; ii < numTimes; ii++)
+    // {
+    //     std:strcat(buffer, this->str);
+    // }
+    // MyString temp{buffer};
+    // delete [] buffer;
+    // return temp;
+    /////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////////////////////////////////
+    // Solution #2:
+    /////////////////////////////////////////////////////////////////
+    MyString temp;
+    for ( size_t ii = 0; ii < numTimes; ii++)
     {
-        std:strcat(buffer, this->str);
+        temp = temp + *this;
     }
-    MyString temp{buffer};
-    delete [] buffer;
     return temp;
+    /////////////////////////////////////////////////////////////////
 }
 // Multiply-equal (*=) operator
 // (increment an instance of this class by the parameter (numTimes))
 void MyString::operator*=(size_t numTimes)
 {
-    char *buffer = new char[(strlen(this->str) * numTimes) + 1];
-    for (size_t ii = 0; ii < numTimes; ii++)
-    {
-        std::strcat(buffer, this->str);
-    }
-    this->str = buffer;
-}
+    /////////////////////////////////////////////////////////////////
+    // Solution #1:
+    /////////////////////////////////////////////////////////////////
+    // char *buffer = new char[(strlen(this->str) * numTimes) + 1];
+    // for (size_t ii = 0; ii < numTimes; ii++)
+    // {
+    //     std::strcat(buffer, this->str);
+    // }
+    // this->str = buffer;
+    /////////////////////////////////////////////////////////////////
 
-// Plus-equal (+=) operator (equivalent to Plus operator (concatentation))
-void MyString::operator+=(const MyString &rhs)
-{
-    *this = *this + rhs;
+    /////////////////////////////////////////////////////////////////
+    // Solution #2:
+    /////////////////////////////////////////////////////////////////
+    *this = *this * numTimes;
 }
 
 // Equality operator
