@@ -1,52 +1,49 @@
 #include <iostream>
 #include <vector>
 #include "Account.h"
-//#include "AccountUtil.h"
+#include "AccountUtil.h"
 
 using namespace std;
 
-void display(const std::vector<Account> &accounts)
-{
-    std::cout << "\n=== Accounts ==========================================" << std::endl;
-    for (const Account &account : accounts)
-    {
-        std::cout << account << std::endl;
-    }
-
-}
-
-void deposit(std::vector<Account> &accounts, double amount)
-{
-    std::cout << "\n=== Depositing into Accounts =================================" << std::endl;
-    for (Account &account : accounts)
-    {
-        if (account.deposit(amount))
-        {
-            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
-        }
-        else
-        {
-            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
-        }
-    }
-}
-
-void withdraw(std::vector<Account> &accounts, double amount)
-{
-    std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
-    for (Account &account : accounts)
-    {
-        if (account.withdraw(amount))
-        {
-            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
-        }
-        else
-        {
-            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
-        }
-    }
-}
-
+// void display(const std::vector<Account> &accounts)
+// {
+//     std::cout << "\n=== Accounts ==========================================" << std::endl;
+//     for (const Account &account : accounts)
+//     {
+//         std::cout << account << std::endl;
+//     }
+//
+// }
+// void deposit(std::vector<Account> &accounts, double amount)
+// {
+//     std::cout << "\n=== Depositing into Accounts =================================" << std::endl;
+//     for (Account &account : accounts)
+//     {
+//         if (account.deposit(amount))
+//         {
+//             std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+//         }
+//         else
+//         {
+//             std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+//         }
+//     }
+// }
+// void withdraw(std::vector<Account> &accounts, double amount)
+// {
+//     std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
+//     for (Account &account : accounts)
+//     {
+//         if (account.withdraw(amount))
+//         {
+//             std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+//         }
+//         else
+//         {
+//             std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+//         }
+//     }
+// }
 
 int main()
 {
@@ -63,7 +60,9 @@ int main()
 
     display(accounts);
     deposit(accounts, 1000);
+    display(accounts);
     withdraw(accounts, 2000);
+    display(accounts);
 
     return 0;
 }

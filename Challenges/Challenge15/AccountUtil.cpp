@@ -27,7 +27,7 @@ void deposit(std::vector<Account> &accounts, double amount)
     }
 }
 
-void withraw(std::vector<Account> &accounts, double amount)
+void withdraw(std::vector<Account> &accounts, double amount)
 {
     std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
     for (Account &account : accounts)
