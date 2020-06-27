@@ -1,9 +1,5 @@
 #include <iostream>
-#include <vector>
-#include "Account.h"
-//#include "AccountUtil.h"
-
-using namespace std;
+#include "AccountUtil.h"
 
 void display(const std::vector<Account> &accounts)
 {
@@ -31,7 +27,7 @@ void deposit(std::vector<Account> &accounts, double amount)
     }
 }
 
-void withdraw(std::vector<Account> &accounts, double amount)
+void withraw(std::vector<Account> &accounts, double amount)
 {
     std::cout << "\n=== Withdrawing from Accounts ==============================" <<std::endl;
     for (Account &account : accounts)
@@ -45,25 +41,4 @@ void withdraw(std::vector<Account> &accounts, double amount)
             std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
         }
     }
-}
-
-
-int main()
-{
-    // Account a1;
-    // a1.deposit(100);
-    // a1.withdraw(50);
-    // std::cout << a1.getBalance() << std::endl;
-
-    vector<Account> accounts;
-    accounts.push_back(Account{});
-    accounts.push_back(Account{"Larry"});
-    accounts.push_back(Account{"Moe", 2000});
-    accounts.push_back(Account {"Curly", 5000});
-
-    display(accounts);
-    deposit(accounts, 1000);
-    withdraw(accounts, 2000);
-
-    return 0;
 }
