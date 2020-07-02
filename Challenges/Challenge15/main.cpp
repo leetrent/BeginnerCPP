@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include "Account.h"
-#include "AccountUtil.h"
+#include "TestUtil.h"
 
 using namespace std;
 
@@ -10,16 +10,16 @@ int main()
     ////////////////////////////////////////////
     // Account
     ////////////////////////////////////////////
-    // vector<Account> accounts;
-    // accounts.push_back(Account{});
-    // accounts.push_back(Account{"Larry"});
-    // accounts.push_back(Account{"Moe", 2000});
-    // accounts.push_back(Account {"Curly", 5000});
-    //
-    // display(accounts);
-    // deposit(accounts, 1000);
-    // display(accounts);
-    // withdraw(accounts, 2000);
+    vector<Account> accounts;
+    accounts.push_back(Account{});
+    accounts.push_back(Account{"Larry"});
+    accounts.push_back(Account{"Moe", 2000});
+    accounts.push_back(Account {"Curly", 5000});
+
+    display(accounts);
+    deposit(accounts, 1000);
+    display(accounts);
+    withdraw(accounts, 2000);
 
     ////////////////////////////////////////////
     // SavingsAccount

@@ -1,5 +1,5 @@
-#ifndef _ACCOUNTUTIL_H_
-#define _ACCOUNTUTIL_H_
+#ifndef _TESTUTIL_H_
+#define _TESTUTIL_H_
 
 #include <vector>
 #include "Account.h"
