@@ -35,5 +35,19 @@ int main()
     display(savingsAccounts);
     withdraw(savingsAccounts, 2000);
 
+    ////////////////////////////////////////////
+    // CheckingAccount
+    ////////////////////////////////////////////
+    vector<CheckingAccount> checkingAccounts;
+    checkingAccounts.push_back(CheckingAccount{});
+    checkingAccounts.push_back(CheckingAccount{"Kirk"});
+    checkingAccounts.push_back(CheckingAccount{"Spock", 2000});
+    checkingAccounts.push_back(CheckingAccount{"Bones", 5000});
+
+    display(checkingAccounts);
+    deposit(checkingAccounts, 1000);
+    display(checkingAccounts);
+    withdraw(checkingAccounts, 3000);
+
     return 0;
 }

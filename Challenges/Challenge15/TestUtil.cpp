@@ -20,6 +20,14 @@ void display(const std::vector<SavingsAccount> &accounts)
         std::cout << account << std::endl;
     }
 }
+void display(const std::vector<CheckingAccount> &accounts)
+{
+    std::cout << "\n=== CheckingAccount ==========================================" << std::endl;
+    for (const CheckingAccount &account : accounts)
+    {
+        std::cout << account << std::endl;
+    }
+}
 
 ////////////////////////////////////////////////////////////
 // Deposit
@@ -54,6 +62,21 @@ void deposit(std::vector<SavingsAccount> &accounts, double amount)
         }
     }
 }
+void deposit(std::vector<CheckingAccount> &accounts, double amount)
+{
+    std::cout << "\n=== Depositing into CheckingAccount =================================" << std::endl;
+    for (CheckingAccount &account : accounts)
+    {
+        if (account.deposit(amount))
+        {
+            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+        }
+        else
+        {
+            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+        }
+    }
+}
 ////////////////////////////////////////////////////////////
 // Withdraw
 ////////////////////////////////////////////////////////////
@@ -76,6 +99,21 @@ void withdraw(std::vector<SavingsAccount> &accounts, double amount)
 {
     std::cout << "\n=== Withdrawing from SavingsAccount ==============================" <<std::endl;
     for (SavingsAccount &account : accounts)
+    {
+        if (account.withdraw(amount))
+        {
+            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+        }
+        else
+        {
+            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+        }
+    }
+}
+void withdraw(std::vector<CheckingAccount> &accounts, double amount)
+{
+    std::cout << "\n=== Withdrawing from CheckingAccount ==============================" <<std::endl;
+    for (CheckingAccount &account : accounts)
     {
         if (account.withdraw(amount))
         {
