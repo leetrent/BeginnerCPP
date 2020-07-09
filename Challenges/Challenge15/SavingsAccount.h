@@ -12,7 +12,7 @@ class SavingsAccount : public Account
   protected:
     double interestRate;
   public:
-    SavingsAccount(std::string name = default_name, double balance = default_balance, double = default_interest_rate);
+    SavingsAccount(std::string name = default_name, double balance = default_balance, double interestRate = default_interest_rate);
     bool deposit(double amount);
 };
 #endif
