@@ -49,5 +49,22 @@ int main()
     display(checkingAccounts);
     withdraw(checkingAccounts, 3000);
 
+    ////////////////////////////////////////////
+    // TrustAccount
+    ////////////////////////////////////////////
+    vector<TrustAccount> trustAccounts;
+    trustAccounts.push_back(TrustAccount{});
+    trustAccounts.push_back(TrustAccount{"Athos", 10000, 5.0});
+    trustAccounts.push_back(TrustAccount{"Porthos", 20000, 4.0});
+    trustAccounts.push_back(TrustAccount{"Aramis", 30000});
+
+    display(trustAccounts);
+    deposit(trustAccounts, 1000);
+    display(trustAccounts);
+    withdraw(trustAccounts, 3000);
+    for (int ii = 1; ii <= 5; ii++)
+    {
+        withdraw(trustAccounts, 1000);
+    }
     return 0;
 }
