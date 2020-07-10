@@ -7,8 +7,8 @@ class SavingsAccount : public Account
   friend std::ostream &operator<<(std::ostream &os, const SavingsAccount &savingsAccount);
   private:
     static constexpr const char *default_name = "Unamed Savings Account";
-    static constexpr double default_balance = 0.0;
-    static constexpr double default_interest_rate = 0.0;
+    static constexpr const double default_balance = 0.0;
+    static constexpr const double default_interest_rate = 0.0;
   protected:
     double interestRate;
   public:

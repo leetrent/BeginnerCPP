@@ -7,6 +7,9 @@ using namespace std;
 
 int main()
 {
+    cout.precision(2);
+    cout << fixed;
+    
     ////////////////////////////////////////////
     // Account
     ////////////////////////////////////////////
@@ -47,7 +50,7 @@ int main()
     display(checkingAccounts);
     deposit(checkingAccounts, 1000);
     display(checkingAccounts);
-    withdraw(checkingAccounts, 3000);
+    withdraw(checkingAccounts, 2000);
 
     ////////////////////////////////////////////
     // TrustAccount

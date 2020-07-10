@@ -27,7 +27,7 @@ bool TrustAccount::deposit(double amount)
 bool TrustAccount::withdraw(double amount)
 {
     if ( numberOfWithdrawals >= max_withdrawals
-            || amount > (balance * max_withdrawals) )
+            || amount > (balance * max_withdraw_percent) )
     {
         return false;
     }

@@ -33,8 +33,6 @@ class TrustAccount : public SavingsAccount
         // Each withrawal cannot exceed 20% of the account balance
         //////////////////////////////////////////////////////////
         bool withdraw(double amount);
-
-
 };
 
 #endif

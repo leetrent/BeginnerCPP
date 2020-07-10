@@ -47,11 +47,11 @@ void deposit(std::vector<Account> &accounts, double amount)
     {
         if (account.deposit(amount))
         {
-            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Deposit of " << amount << " into " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Deposit of " << amount << " into " << account << " failed." << std::endl;
         }
     }
 }
@@ -62,11 +62,11 @@ void deposit(std::vector<SavingsAccount> &accounts, double amount)
     {
         if (account.deposit(amount))
         {
-            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Deposit of " << amount << " into " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Deposit of " << amount << " into " << account << " failed." << std::endl;
         }
     }
 }
@@ -77,11 +77,11 @@ void deposit(std::vector<CheckingAccount> &accounts, double amount)
     {
         if (account.deposit(amount))
         {
-            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Deposit of " << amount << " into " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Deposit of " << amount << " into " << account << " failed." << std::endl;
         }
     }
 }
@@ -92,11 +92,11 @@ void deposit(std::vector<TrustAccount> &accounts, double amount)
     {
         if (account.deposit(amount))
         {
-            std::cout << "Deposit of " << amount << " into " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Deposit of " << amount << " into " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Deposit of " << amount << " into " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Deposit of " << amount << " into " << account << " failed." << std::endl;
         }
     }
 }
@@ -110,11 +110,11 @@ void withdraw(std::vector<Account> &accounts, double amount)
     {
         if (account.withdraw(amount))
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Withdawal of " << amount << " from " << account << " failed." << std::endl;
         }
     }
 }
@@ -125,11 +125,11 @@ void withdraw(std::vector<SavingsAccount> &accounts, double amount)
     {
         if (account.withdraw(amount))
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Withdawal of " << amount << " from " << account << " failed." << std::endl;
         }
     }
 }
@@ -140,11 +140,11 @@ void withdraw(std::vector<CheckingAccount> &accounts, double amount)
     {
         if (account.withdraw(amount))
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Withdawal of " << amount << " from " << account << " failed." << std::endl;
         }
     }
 }
@@ -155,11 +155,11 @@ void withdraw(std::vector<TrustAccount> &accounts, double amount)
     {
         if (account.withdraw(amount))
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
+            std::cout << "[SUCCESS] => Withdawal of " << amount << " from " << account << " was successfull." << std::endl;
         }
         else
         {
-            std::cout << "Withdawal of " << amount << " from " << account << " failed." << std::endl;
+            std::cout << "[FAILURE] => Withdawal of " << amount << " from " << account << " failed." << std::endl;
         }
     }
 }
