@@ -1,8 +1,14 @@
-#include "Account.h"
+#include "SavingsAccount.h"
 
 int main()
 {
-    Account a;
-    std::cout << a << std::endl;
+    SavingsAccount sa;
+    std::cout << sa << std::endl;
+
+    SavingsAccount casey("Casey", 100000);
+    casey.deposit(100000);
+    casey.withdraw(50000);
+    std::cout << casey << std::endl;
+
     return 0;
 }
