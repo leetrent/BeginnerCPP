@@ -15,5 +15,7 @@ bool CheckingAccount::withdraw(double amount)
 
 void CheckingAccount::print(std::ostream &os) const
 {
+    os.precision(2);
+    os << std::fixed;
     os << "[CheckingAccount = {name: " << this->name << ", balance: " << this->balance << "}]";
 }
