@@ -9,6 +9,20 @@ using namespace std;
 
 int main()
 {
+    // CheckingAccount ca;
+    // cout << ca << endl;
+
+    // SavingsAccount sa {"Frank", 5000, 2.6};
+    // cout << sa << endl;
+    // sa.deposit(10000);
+    // cout << sa << endl;
+    // sa.withdraw(10000);
+    // cout << sa << endl;
+
+    // Account *ptr = new TrustAccount("Leo", 10000, 2.6);
+    // cout <<  ptr << endl;
+    // cout << *ptr << endl;
+
     CheckingAccount frank {"Frank", 5000};
     cout << frank << endl;
 
