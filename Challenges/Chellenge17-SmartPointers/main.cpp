@@ -61,21 +61,24 @@ int main()
 ///////////////////////////////////////////////////////////
 unique_ptr<vector<shared_ptr<Test>>> make()
 {
-    //vector<shared_ptr<Test>> vec = make_unique<vector<shared_ptr<Test>>>();
-    //return vec;
     return make_unique<vector<shared_ptr<Test>>>();
 }
 
 void fill(vector<shared_ptr<Test>> &vec, int num)
 {
+    int temp;
     for (int ii = 0; ii < num; ii++)
     {
-        vec.push_back( make_shared<Test>( (ii + 1) * 10) );
+        cout << "Enter data point for [" << (ii + 1) << "]: ";
+        cin >> temp;
+        vec.push_back( make_shared<Test>(temp) );
     }
 }
 
 void display(const vector<shared_ptr<Test>> &vec)
 {
+    cout << "\nYou entered the following values:" << endl;
+    cout << "===================================" << endl;
     for ( const shared_ptr<Test> test : vec)
     {
         cout << test->get_data() << endl;
