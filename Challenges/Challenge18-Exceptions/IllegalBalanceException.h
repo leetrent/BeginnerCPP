@@ -6,11 +6,11 @@ class IllegalBalanceException : public std::exception
     public:
         IllegalBalanceException()
         {
-            std::cout << "[IllegalBalanceException] => (contructor)" << std::endl;
+            std::cout << std::endl << "[IllegalBalanceException] => (contructor)" << std::endl;
         }
         ~IllegalBalanceException()
         {
-            std::cout << "[IllegalBalanceException] => (destructor)" << std::endl;
+            std::cout << std::endl << "[IllegalBalanceException] => (destructor)" << std::endl;
         }
         virtual const char* what() const noexcept override
         {

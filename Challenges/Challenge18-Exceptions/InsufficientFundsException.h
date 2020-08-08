@@ -6,11 +6,11 @@ class InsufficientFundsException : public std::exception
     public:
         InsufficientFundsException()
         {
-             std::cout << "[InsufficientFundsException] => (contructor)" << std::endl;
+             std::cout << std::endl << "[InsufficientFundsException] => (contructor)" << std::endl;
         }
         ~InsufficientFundsException()
         {
-             std::cout << "[InsufficientFundsException] => (destructor)" << std::endl;
+             std::cout << std::endl << "[InsufficientFundsException] => (destructor)" << std::endl;
         }
         virtual const char* what() const noexcept override
         {
