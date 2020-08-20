@@ -22,11 +22,25 @@ struct Tours
     std::vector<Country> countries;
 };
 
+Country buildColumbia();
+Country buildBrazil();
+Country buildChile();
+Country buildArgentina();
+void    printTours(const Tours tours);
+
 int main()
 {
     Tours tours;
     tours.title = "Your Ticket Prices from Miami";
+    tours.countries = { buildColumbia(), buildBrazil(), buildChile(), buildArgentina() };
 
+    printTours(tours);
+    
+    return 0;
+}
+
+Country buildColumbia()
+{
     Country columbia;
     columbia.name = "Columbia";
     columbia.cities =
@@ -36,7 +50,11 @@ int main()
         { "Medellin",   2464000, 350.98 },
         { "Cartagena",  972000, 345.34  }
     };
+    return columbia;
+}
 
+Country buildBrazil()
+{
     Country brazil;
     brazil.name = "Brazil";
     brazil.cities =
@@ -45,7 +63,11 @@ int main()
         { "Sao Paulo", 11310000, 975.45 },
         { "Salvador", 18234000, 855.99 }
     };
+    return brazil;
+}
 
+Country buildChile()
+{
     Country chile;
     chile.name = "Chile";
     chile.cities =
@@ -53,16 +75,22 @@ int main()
         { "Valdivia", 260000, 569.12 },
         { "Santiago", 7040000, 520.00 }
     };
+    return chile;
+}
 
+Country buildArgentina()
+{
     Country argentina;
-    chile.name = "Argentina";
-    chile.cities =
+    argentina.name = "Argentina";
+    argentina.cities =
     {
         { "Buenos Aires", 3010000, 723.77 }
     };
+    return argentina;
+}
 
-    tours.countries = {columbia, brazil, chile, argentina};
-
+void printTours(const Tours tours)
+{
     std::cout << tours.title << std::endl;
     for (Country country : tours.countries)
     {
@@ -72,5 +100,4 @@ int main()
             std::cout << "\t" << "\t" << city.name << " | " << city.population << " | " << city.cost << std::endl;
         }
     }
-    return 0;
 }
