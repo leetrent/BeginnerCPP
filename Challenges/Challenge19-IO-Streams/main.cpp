@@ -95,23 +95,16 @@ Country buildArgentina()
 
 void printTours(const Tours tours)
 {
+    std::cout << std::endl;
     printRuler();
     printTableHeader();
-
-    // std::cout << tours.title << std::endl;
-    // for (Country country : tours.countries)
-    // {
-    //     std::cout << "\t" << country.name << std::endl;
-    //     for (City city: country.cities)
-    //     {
-    //         std::cout << "\t" << "\t" << city.name << "\t" << city.population << "\t" << city.cost << std::endl;
-    //     }
-    // }
-
+    std::cout << std::setfill(' ');
+    std::cout << std::setprecision(2) << std::fixed;
     for (Country country: tours.countries)
     {
         printCountry(country);
     }
+    std::cout << std::endl;
 }
 
 void printRuler()
@@ -127,7 +120,6 @@ void printTableHeader()
                 << std::setw(15) << std::right << "Price"
     << std::endl;
     std::cout << std::setw(70) << std::setfill('-') << "" << std::endl;
-    std::cout <<  std::setfill(' ');
 }
 
 void printCountry(const Country country)
