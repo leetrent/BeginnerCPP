@@ -126,6 +126,8 @@ void printTableHeader()
                 << std::setw(15) << std::right << "Population"
                 << std::setw(15) << std::right << "Price"
     << std::endl;
+    std::cout << std::setw(70) << std::setfill('-') << "" << std::endl;
+    std::cout <<  std::setfill(' ');
 }
 
 void printCountry(const Country country)
