@@ -35,7 +35,7 @@ int main()
     tours.countries = { buildColumbia(), buildBrazil(), buildChile(), buildArgentina() };
 
     printTours(tours);
-    
+
     return 0;
 }
 
@@ -91,13 +91,19 @@ Country buildArgentina()
 
 void printTours(const Tours tours)
 {
+    std::cout << "1234567890123456789012345678901234567890123456789012345678901234567890" << std::endl;
+    std::cout   << std::setw(20) << std::left << "Country"
+                << std::setw(20) << std::left << "City"
+                << std::setw(15) << std::right << "Population" 
+                << std::setw(15) << std::right << "Price"
+    << std::endl;
     std::cout << tours.title << std::endl;
     for (Country country : tours.countries)
     {
         std::cout << "\t" << country.name << std::endl;
         for (City city: country.cities)
         {
-            std::cout << "\t" << "\t" << city.name << " | " << city.population << " | " << city.cost << std::endl;
+            std::cout << "\t" << "\t" << city.name << "\t" << city.population << "\t" << city.cost << std::endl;
         }
     }
 }
