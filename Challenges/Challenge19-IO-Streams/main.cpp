@@ -130,18 +130,25 @@ void printTableHeader()
 
 void printCountry(const Country country)
 {
-    std::cout << std::setw(20) << std::left << country.name << std::endl;
+    std::cout << std::setw(20) << std::left << country.name;
+
+    unsigned int count = 0;
     for (City city : country.cities)
     {
+        if (count > 0)
+        {
+             //std::cout << std::endl;
+             std::cout << std::setw(20) << std::left << "";
+        }
         printCity(city);
+        count++;
     }
 }
 
 void printCity(const City city)
 {
-    std::cout   << std::setw(20) << std::left << ""
-                << std::setw(20) << std::left << city.name
+    std::cout   << std::setw(20) << std::left << city.name
                 << std::setw(15) << std::right << city.population
                 << std::setw(15) << std::right << city.cost
-    << std::endl;
+                << std::endl;
 }
