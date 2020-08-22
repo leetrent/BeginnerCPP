@@ -28,6 +28,7 @@ Country buildChile();
 Country buildArgentina();
 void    printTours(const Tours tours);
 void    printRuler();
+void    printTitle(const std::string title);
 void    printTableHeader();
 void    printCountry(const Country country);
 void    printCity(const City city);
@@ -97,6 +98,9 @@ void printTours(const Tours tours)
 {
     std::cout << std::endl;
     printRuler();
+    std::cout << std::endl;
+    printTitle(tours.title);
+    std::cout << std::endl;
     printTableHeader();
     std::cout << std::setfill(' ');
     std::cout << std::setprecision(2) << std::fixed;
@@ -111,7 +115,10 @@ void printRuler()
 {
     std::cout << "1234567890123456789012345678901234567890123456789012345678901234567890" << std::endl;
 }
-
+void printTitle(const std::string title)
+{
+    std::cout << std::setw( (70 - title.length()) / 2) << "" << title << std::endl;
+}
 void printTableHeader()
 {
     std::cout   << std::setw(20) << std::left << "Country"
