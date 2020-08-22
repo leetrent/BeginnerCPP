@@ -3,6 +3,12 @@
 #include <vector>
 #include <string>
 
+const int TOTAL_WIDTH = 70;
+const int COUNTRY_WIDTH = 20;
+const int CITY_WIDTH = 20;
+const int POPULATION_WIDTH = 15;
+const int COST_WIDTH = 15;
+
 struct City
 {
     std::string name;
@@ -121,17 +127,17 @@ void printTitle(const std::string title)
 }
 void printTableHeader()
 {
-    std::cout   << std::setw(20) << std::left << "Country"
-                << std::setw(20) << std::left << "City"
-                << std::setw(15) << std::right << "Population"
-                << std::setw(15) << std::right << "Price"
+    std::cout   << std::setw(COUNTRY_WIDTH) << std::left << "Country"
+                << std::setw(CITY_WIDTH) << std::left << "City"
+                << std::setw(POPULATION_WIDTH) << std::right << "Population"
+                << std::setw(COST_WIDTH) << std::right << "Price"
     << std::endl;
     std::cout << std::setw(70) << std::setfill('-') << "" << std::endl;
 }
 
 void printCountry(const Country country)
 {
-    std::cout << std::setw(20) << std::left << country.name;
+    std::cout << std::setw(COUNTRY_WIDTH) << std::left << country.name;
 
     unsigned int count = 0;
     for (City city : country.cities)
@@ -139,7 +145,7 @@ void printCountry(const Country country)
         if (count > 0)
         {
              //std::cout << std::endl;
-             std::cout << std::setw(20) << std::left << "";
+             std::cout << std::setw(CITY_WIDTH) << std::left << "";
         }
         printCity(city);
         count++;
@@ -148,8 +154,8 @@ void printCountry(const Country country)
 
 void printCity(const City city)
 {
-    std::cout   << std::setw(20) << std::left << city.name
-                << std::setw(15) << std::right << city.population
-                << std::setw(15) << std::right << city.cost
+    std::cout   << std::setw(CITY_WIDTH) << std::left << city.name
+                << std::setw(POPULATION_WIDTH) << std::right << city.population
+                << std::setw(COST_WIDTH) << std::right << city.cost
                 << std::endl;
 }
