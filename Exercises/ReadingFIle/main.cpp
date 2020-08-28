@@ -25,5 +25,7 @@ int read_file(std::string file_name)
         std::cout << word << std::endl;
     }
 
+    std::string line{};
+
     return 0;
 }

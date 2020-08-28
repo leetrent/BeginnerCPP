@@ -18,13 +18,25 @@ int main()
         return 1;
     }
 
-    string answer_key{};
-    in_file >> answer_key;
-    cout << "answer_key: '" << answer_key << "'" << endl;
+    vector<string> data_vec{};
+    string line{};
+    while(getline(in_file, line))
+    {
+        data_vec.push_back(line);
+    }
 
-    Student lee {"Lee", "ABCDE", "ABCDE"};
-    cout << "Lee's grade: " << lee.get_grade() << endl;
-    vector<Student> students{lee};
+    for (const string data_line: data_vec)
+    {
+        cout << data_line << endl;
+    }
+
+    // string answer_key{};
+    // in_file >> answer_key;
+    // cout << "answer_key: '" << answer_key << "'" << endl;
+    //
+    // Student lee {"Lee", "ABCDE", "ABCDE"};
+    // cout << "Lee's grade: " << lee.get_grade() << endl;
+    // vector<Student> students{lee};
 
     return 0;
 }
