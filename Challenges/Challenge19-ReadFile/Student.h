@@ -13,5 +13,6 @@ class Student
         Student(string name, string answers, string answer_key);
         ~Student() = default;
         unsigned short int get_grade();
+        string describe();
 };
 #endif
