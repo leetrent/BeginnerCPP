@@ -30,14 +30,6 @@ Students::Students(std::string student_file_name)
     }
 
     string answer_key = data_vec.at(0);
-    cout << endl << "(answer_key): '" << answer_key << "'" << endl;
-
-    cout <<  "(Frank)...: '" << data_vec.at(1) << "', " << data_vec.at(2) << "'" << endl;
-    cout << "(Larry)...: '" << data_vec.at(3) << "', " << data_vec.at(4) << "'" << endl;
-    cout << "(Moe).....: '" << data_vec.at(5) << "', " << data_vec.at(5) << "'" << endl;
-    cout << "(Larry)...: '" << data_vec.at(7)  << "', " << data_vec.at(8) << "'" << endl;
-    cout << "(Michael).: '" << data_vec.at(9) << "', " << data_vec.at(10) << "'" << endl;
-    cout << endl;
 
     size_t ii = 1;
     while (ii < data_vec.size() )
@@ -45,18 +37,32 @@ Students::Students(std::string student_file_name)
         string name = data_vec.at(ii);
         ii++;
         string answers = data_vec.at(ii);
-        this->students.push_back(Student(name, answers, answer_key));
+        unsigned short int grade = this->calc_grade(answers, answer_key);
+        this->students.push_back(Student(name, answers, grade));
         ii++;
     }
-    
+
     for (Student student : this->students)
     {
         cout << student.describe() << endl;
     }
 }
 
-string Students::trim(string s) 
+string Students::trim(string s)
 {
     regex e("^\\s+|\\s+$");   // remove leading and trailing spaces
     return regex_replace(s, e, "");
+}
+
+unsigned short int Students::calc_grade(string answers, string answer_key)
+{
+    int grade = 0;
+    for (size_t ii = 0; ii < answer_key.size(); ii++)
+    {
+        if ( answers.at(ii) == answer_key.at(ii) )
+        {
+            grade++;
+        }
+    }
+    return grade;
 }

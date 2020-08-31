@@ -11,7 +11,8 @@ class Students
 {
     private:
         vector<Student> students;
-        string trim(string s) ;
+        string trim(string s);
+        unsigned short int calc_grade(string answers, string answer_key);
     public:
         Students(string student_file_name);
         ~Students() = default;

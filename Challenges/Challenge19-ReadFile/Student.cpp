@@ -2,38 +2,32 @@
 #include "Student.h"
 using namespace std;
 
-Student::Student(string name, string answers, string answer_key)
-    : name{name}, answers{answers}
-{
-    cout    << "Student = {"
-            << name
-            << ", "
-            << answers
-            << ", "
-            << answer_key
-            << "}"
-            << endl;
+Student::Student(string name, string answers, unsigned short int grade)
+    : name{name}, answers{answers}, grade{grade}
+{}
 
-    //this->grade = calc_grade(answers, answer_key);
-    for (size_t ii = 0; ii < answer_key.size(); ii++)
-    {
-        if ( answers.at(ii) == answer_key.at(ii) )
-        {
-            this->grade++;
-        }
-    }
+string Student::get_name() const
+{
+    return this->name;
 }
 
-unsigned short int Student::get_grade()
+string Student::get_answers() const
+{
+    return this->answers;
+}
+
+unsigned short int Student::get_grade() const
 {
     return this->grade;
 }
 
-string Student::describe()
+string Student::describe() const
 {
     string description{"Student = {"};
     description.append("name: ");
     description.append(this->name);
+    description.append(", answers: ");
+    description.append(this->answers);
     description.append(", grade: ");
     description.append(to_string(this->grade));
     description.append("}");
