@@ -66,3 +66,34 @@ unsigned short int Students::calc_grade(string answers, string answer_key)
     }
     return grade;
 }
+
+double Students::calc_average_grade()
+{
+    unsigned short int running_total = 0;
+    for (Student student : this->students)
+    {
+        running_total += student.get_grade();
+    }
+    return static_cast<double>(running_total) / this->students.size();
+}
+
+void Students::print()
+{
+    cout << setw(15) << left << "Student" << setw(5) << "Score" << endl;
+    cout << setw(20) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+
+    for (Student student : this->students)
+    {
+        cout << setprecision(1) << fixed;
+        cout << setw(15)    << left     << student.get_name();
+        cout << setw(5)     << right    << student.get_grade();
+        cout << endl;
+    }
+
+    cout << setw(20) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    cout << setw(15) << left << "Average score";
+    cout << setw(5) << right << this->calc_average_grade();
+
+}

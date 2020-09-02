@@ -7,5 +7,6 @@ const string IN_FILE_NAME = "responses.txt";
 int main()
 {
     Students students(IN_FILE_NAME);
+    students.print();
     return 0;
 }
