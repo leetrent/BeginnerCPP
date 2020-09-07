@@ -6,6 +6,7 @@
 #include <fstream>
 #include <vector>
 #include "Students.h"
+#include "FileHandlingException.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ Students::Students(std::string student_file_name)
     ifstream student_file {student_file_name};
     if (!student_file.is_open())
     {
-        cerr << "Could not open file '" << student_file_name << "'." << endl;
+        throw FileHandlingException("Could not open file '" + student_file_name + "'.");
     }
 
     vector<string> data_vec{};
@@ -22,11 +23,6 @@ Students::Students(std::string student_file_name)
     while(getline(student_file, line))
     {
         data_vec.push_back(trim(line));
-    }
-
-    for (const string data_line: data_vec)
-    {
-        cout << data_line << endl;
     }
 
     string answer_key = data_vec.at(0);
@@ -42,10 +38,7 @@ Students::Students(std::string student_file_name)
         ii++;
     }
 
-    for (Student student : this->students)
-    {
-        cout << student.describe() << endl;
-    }
+    this->average_grade = this->calc_average_grade();
 }
 
 string Students::trim(string s)
@@ -77,7 +70,7 @@ double Students::calc_average_grade()
     return static_cast<double>(running_total) / this->students.size();
 }
 
-void Students::print()
+void Students::print() const
 {
     cout << setw(15) << left << "Student" << setw(5) << "Score" << endl;
     cout << setw(20) << setfill('-') << "" << endl;
@@ -94,6 +87,6 @@ void Students::print()
     cout << setw(20) << setfill('-') << "" << endl;
     cout << setfill(' ');
     cout << setw(15) << left << "Average score";
-    cout << setw(5) << right << this->calc_average_grade();
+    cout << setw(5) << right << this->average_grade;
 
 }

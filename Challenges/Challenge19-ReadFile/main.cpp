@@ -1,4 +1,5 @@
 #include "Students.h"
+#include "FileHandlingException.h"
 
 using namespace std;
 
@@ -6,7 +7,18 @@ const string IN_FILE_NAME = "responses.txt";
 
 int main()
 {
-    Students students(IN_FILE_NAME);
-    students.print();
+    try
+    {
+        Students students(IN_FILE_NAME);
+        cout << endl;
+        students.print();
+        cout << endl;
+    }
+    catch (FileHandlingException &ex)
+    {
+        std::cerr << endl << ex.get_message() << std::endl;
+        return 1;
+    }
+
     return 0;
 }
