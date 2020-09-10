@@ -1,6 +1,6 @@
 #include <fstream>
 #include "WordCounter.h"
-//#include "FileHandlingException.h"
+#include "FileHandlingException.h"
 
 WordCounter::WordCounter(std::string fileName, std::string searchWord)
     : fileName{fileName}, searchWord{searchWord}
@@ -8,7 +8,7 @@ WordCounter::WordCounter(std::string fileName, std::string searchWord)
     std::ifstream inFile {fileName};
     if (!inFile.is_open())
     {
-        //throw FileHandlingException("Could not open file '" + fileName + "'.");
+        throw FileHandlingException("Could not open file '" + fileName + "'.");
     }
 }
 
