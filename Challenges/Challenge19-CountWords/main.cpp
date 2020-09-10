@@ -3,9 +3,17 @@
 
 using namespace std;
 
+const string FILE_NAME = "romeoandjuliet.txt";
+
 int main()
 {
-    WordCounter wordCounter("romeoandjuliet.txt", "love");
+    std::string wordToFind{};
+
+    cout << endl;
+    std::cout << "Enter the word to search for: ";
+    std::cin >> wordToFind;
+
+    WordCounter wordCounter(FILE_NAME, wordToFind);
 
     cout << endl;
     cout << "File Name.......: " << wordCounter.getFileName()           << endl;
