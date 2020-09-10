@@ -39,6 +39,8 @@ Students::Students(std::string student_file_name)
     }
 
     this->average_grade = this->calc_average_grade();
+
+    student_file.close();
 }
 
 string Students::trim(string s)
