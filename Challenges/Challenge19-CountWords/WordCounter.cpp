@@ -23,7 +23,7 @@ WordCounter::WordCounter(std::string fileName, std::string searchWord)
     inFile.close();
 }
 
-bool WordCounter::searchWordFound(std::string searchWord, std::string wordInFile)
+bool WordCounter::searchWordFound(const std::string &searchWord, const std::string &wordInFile)
 {
     size_t wordFound = wordInFile.find(searchWord);
     if (wordFound == std::string::npos)
