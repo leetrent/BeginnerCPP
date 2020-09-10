@@ -11,7 +11,7 @@ class WordCounter
         unsigned int totalWordCount{0};
         bool searchWordFound(const std::string &searchWord, const std::string &wordInFile);
     public:
-        WordCounter(std::string fileName, std::string searchWord);
+        WordCounter(const std::string &fileName, const std::string &searchWord);
         ~WordCounter() = default;
         std::string getFileName() const;
         std::string getSearchWord() const;

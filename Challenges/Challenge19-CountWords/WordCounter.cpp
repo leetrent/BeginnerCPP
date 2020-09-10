@@ -2,7 +2,7 @@
 #include "WordCounter.h"
 #include "FileHandlingException.h"
 
-WordCounter::WordCounter(std::string fileName, std::string searchWord)
+WordCounter::WordCounter(const std::string &fileName, const std::string &searchWord)
     : fileName{fileName}, searchWord{searchWord}
 {
     std::ifstream inFile {fileName};
