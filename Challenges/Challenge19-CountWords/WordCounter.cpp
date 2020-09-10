@@ -10,6 +10,27 @@ WordCounter::WordCounter(std::string fileName, std::string searchWord)
     {
         throw FileHandlingException("Could not open file '" + fileName + "'.");
     }
+
+    std::string wordReadIn{};
+    while (inFile >> wordReadIn)
+    {
+        this->totalWordCount++;
+        if (searchWordFound(searchWord, wordReadIn))
+        {
+            this->occurrenceCount++;
+        }
+    }
+    inFile.close();
+}
+
+bool WordCounter::searchWordFound(std::string searchWord, std::string wordInFile)
+{
+    size_t wordFound = wordInFile.find(searchWord);
+    if (wordFound == std::string::npos)
+    {
+        return false;
+    }
+    return true;
 }
 
 std::string WordCounter::getFileName() const
