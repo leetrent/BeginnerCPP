@@ -47,13 +47,12 @@ void SongPlayer::displayPlaylist()
     {
         cout << song << endl;
     }
-    cout << setw(57) << setfill('-') << "" << endl;
-    cout << setfill(' ');
+    // cout << setw(57) << setfill('-') << "" << endl;
+    // cout << setfill(' ');
 }
 
 void SongPlayer::displayCurrentSong()
 {
-    cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
     list<Song>::iterator currentSong = this->playlist.begin();
