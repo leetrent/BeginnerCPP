@@ -14,6 +14,7 @@ class SongPlayer
     public:
         SongPlayer(string file_name);
         ~SongPlayer() = default;
+        void displayPlaylist();
 };
 
 #endif

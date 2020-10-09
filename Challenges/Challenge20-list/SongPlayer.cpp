@@ -1,5 +1,6 @@
 #include <fstream>
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <string>
 #include "SongPlayer.h"
@@ -30,18 +31,22 @@ SongPlayer::SongPlayer(string file_name) : fileName{file_name}
             this->playlist.push_back(Song(name, artist, stoi(rating)));
         }
     }
+}
 
-    unsigned short int count = 0;
-    for (const Song &song : this->playlist)
+void SongPlayer::displayPlaylist()
+{
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    cout    << setw(20) << left << "Name"
+            << setw(30) << left << "Artist"
+            << setw(2)  << left << "Rating"
+            << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    for ( const Song &song: this->playlist )
     {
-        cout << endl;
-        cout << "Song #" << ++count << ":" << endl;
-        cout << song.getName()      << endl;
-        cout << song.getArtist()    << endl;
-        cout << song.getRating()    << endl;
-        cout << endl;
+        cout << song << endl;
     }
-
-
-    cout << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
 }
