@@ -50,3 +50,19 @@ void SongPlayer::displayPlaylist()
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
 }
+
+void SongPlayer::displayCurrentSong()
+{
+    cout << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    list<Song>::iterator currentSong = this->playlist.begin();
+    cout << "Current Song:" << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    cout << *currentSong;
+    cout << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << setfill(' ');
+    cout << endl;
+}

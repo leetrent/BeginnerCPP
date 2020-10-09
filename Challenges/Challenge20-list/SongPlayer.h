@@ -15,6 +15,8 @@ class SongPlayer
         SongPlayer(string file_name);
         ~SongPlayer() = default;
         void displayPlaylist();
+        Song getCurrentSong();
+        void displayCurrentSong();
 };
 
 #endif
