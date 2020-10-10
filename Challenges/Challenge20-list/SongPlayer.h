@@ -11,6 +11,8 @@ class SongPlayer
     private:
         string fileName{};
         list<Song> playlist;
+        list<Song>::iterator currentSong;
+        void displaySong(const string label, const Song &song);
     public:
         SongPlayer(string file_name);
         ~SongPlayer() = default;
@@ -18,6 +20,7 @@ class SongPlayer
         void displayCurrentSong();
         void displayMenu();
         Song getCurrentSong();
+        void playFirstSong();
 };
 
 #endif

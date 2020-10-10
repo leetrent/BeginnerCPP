@@ -58,7 +58,7 @@ void SongPlayer::displayCurrentSong()
     cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
-    list<Song>::iterator currentSong = this->playlist.begin();
+    this->currentSong = this->playlist.begin();
     cout << "Current Song:" << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
@@ -81,4 +81,24 @@ void SongPlayer::displayMenu()
     cout << "L - List the current playlist" << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << "Enter a selection (Q to quit): ";
+}
+
+void SongPlayer::playFirstSong()
+{
+    this->currentSong = this->playlist.begin();
+    this->displaySong("Playing first song:", *this->currentSong);
+}
+
+void SongPlayer::displaySong(const string label, const Song &song)
+{
+    cout << endl;
+    cout << setw(57) << setfill('-') << ""  << endl;
+    cout << "Playing first song: " << endl;
+    cout << setw(57) << setfill('-') << ""  << endl;
+    cout << setfill(' ');
+    cout    << setw(20) << left << "Name"
+            << setw(30) << left << "Artist"
+            << setw(2)  << left << "Rating"
+            << endl;
+    cout << *this->currentSong << endl;
 }

@@ -22,7 +22,8 @@ int main()
         switch(userSelection)
         {
             case 'F':
-            break;
+                songPlayer.playFirstSong();
+                break;
             case 'N':
             break;
             case 'P':
