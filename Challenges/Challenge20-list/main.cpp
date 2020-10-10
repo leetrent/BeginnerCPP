@@ -11,6 +11,8 @@ int main()
     songPlayer.displayCurrentSong();
     songPlayer.displayMenu();
 
+    cout << endl;
+
     //cout << song.getName() << " " << song.getArtist() << " " << song.getRating() << endl;
     return 0;
 }
