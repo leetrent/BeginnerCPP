@@ -63,5 +63,17 @@ void SongPlayer::displayCurrentSong()
     cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
-    cout << endl;
+}
+
+void SongPlayer::displayMenu()
+{
+    cout << "Menu:" << endl;
+    cout << setw(57) << setfill('-') << ""  << endl;
+    cout << "F - Play First Song"           << endl;
+    cout << "N - Play Next song"            << endl;
+    cout << "P - Play Previous song"        << endl;
+    cout << "A - Add and play a new Song"   << endl;
+    cout << "L - List the current playlist" << endl;
+    cout << setw(57) << setfill('-') << "" << endl;
+    cout << "Enter a selection (Q to quit): ";
 }

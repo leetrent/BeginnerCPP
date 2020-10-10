@@ -9,6 +9,7 @@ int main()
     SongPlayer songPlayer{"songs.txt"};
     songPlayer.displayPlaylist();
     songPlayer.displayCurrentSong();
+    songPlayer.displayMenu();
 
     //cout << song.getName() << " " << song.getArtist() << " " << song.getRating() << endl;
     return 0;
