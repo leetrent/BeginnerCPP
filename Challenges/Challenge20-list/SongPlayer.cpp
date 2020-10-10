@@ -35,6 +35,8 @@ SongPlayer::SongPlayer(string file_name) : fileName{file_name}
 
 void SongPlayer::displayPlaylist()
 {
+    cout << endl;
+    cout << "Current Playlist:" << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
     cout    << setw(20) << left << "Name"
@@ -53,6 +55,7 @@ void SongPlayer::displayPlaylist()
 
 void SongPlayer::displayCurrentSong()
 {
+    cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
     list<Song>::iterator currentSong = this->playlist.begin();
@@ -67,6 +70,8 @@ void SongPlayer::displayCurrentSong()
 
 void SongPlayer::displayMenu()
 {
+    cout << endl;
+    cout << setw(57) << setfill('-') << ""  << endl;
     cout << "Menu:" << endl;
     cout << setw(57) << setfill('-') << ""  << endl;
     cout << "F - Play First Song"           << endl;
