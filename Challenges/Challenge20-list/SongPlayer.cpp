@@ -89,6 +89,12 @@ void SongPlayer::playFirstSong()
     this->displaySong("Playing first song:", *this->currentSong);
 }
 
+void SongPlayer::playNextSong()
+{
+    this->currentSong++;
+    this->displaySong("Playing next song:", *this->currentSong);
+}
+
 void SongPlayer::displaySong(const string label, const Song &song)
 {
     cout << endl;

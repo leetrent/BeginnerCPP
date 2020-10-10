@@ -21,6 +21,7 @@ class SongPlayer
         void displayMenu();
         Song getCurrentSong();
         void playFirstSong();
+        void playNextSong();
 };
 
 #endif

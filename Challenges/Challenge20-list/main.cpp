@@ -25,7 +25,8 @@ int main()
                 songPlayer.playFirstSong();
                 break;
             case 'N':
-            break;
+                songPlayer.playNextSong();
+                break;
             case 'P':
             break;
             case 'A':
