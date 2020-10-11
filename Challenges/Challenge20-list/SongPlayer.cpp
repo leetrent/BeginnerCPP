@@ -92,6 +92,10 @@ void SongPlayer::playFirstSong()
 void SongPlayer::playNextSong()
 {
     this->currentSong++;
+    if (this->currentSong == this->playlist.end())
+    {
+        this->currentSong = this->playlist.begin();
+    }
     this->displaySong("Playing next song:", *this->currentSong);
 }
 

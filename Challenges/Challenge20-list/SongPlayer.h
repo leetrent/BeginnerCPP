@@ -22,6 +22,7 @@ class SongPlayer
         Song getCurrentSong();
         void playFirstSong();
         void playNextSong();
+        void playPreviousSong();
 };
 
 #endif
