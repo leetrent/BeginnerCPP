@@ -31,6 +31,7 @@ SongPlayer::SongPlayer(string file_name) : fileName{file_name}
             this->playlist.push_back(Song(name, artist, stoi(rating)));
         }
     }
+    this->currentSong = this->playlist.begin();
 }
 
 void SongPlayer::displayPlaylist()
@@ -91,7 +92,12 @@ void SongPlayer::playFirstSong()
 
 void SongPlayer::playNextSong()
 {
+    cout    << "[SongPlayer][playNextSong] => (this->currentSong == this->playlist.end()): "
+            << (this->currentSong == this->playlist.end()) << endl;
     this->currentSong++;
+    cout    << "[SongPlayer][playNextSong] => (this->currentSong == this->playlist.end()): "
+            << (this->currentSong == this->playlist.end()) << endl;
+    
     if (this->currentSong == this->playlist.end())
     {
         this->currentSong = this->playlist.begin();
@@ -99,11 +105,24 @@ void SongPlayer::playNextSong()
     this->displaySong("Playing next song:", *this->currentSong);
 }
 
+void SongPlayer::playPreviousSong()
+{
+    if (this->currentSong == this->playlist.begin())
+    {
+        this->currentSong = this->playlist.end();
+    }
+    else
+    {
+        this->currentSong--;
+    }
+    this->displaySong("Playing previous song:", *this->currentSong);
+}
+
 void SongPlayer::displaySong(const string label, const Song &song)
 {
     cout << endl;
     cout << setw(57) << setfill('-') << ""  << endl;
-    cout << "Playing first song: " << endl;
+    cout << label << endl;
     cout << setw(57) << setfill('-') << ""  << endl;
     cout << setfill(' ');
     cout    << setw(20) << left << "Name"
