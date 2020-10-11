@@ -28,7 +28,8 @@ int main()
                 songPlayer.playNextSong();
                 break;
             case 'P':
-            break;
+                songPlayer.playPreviousSong();
+                break;
             case 'A':
             break;
             case 'L':

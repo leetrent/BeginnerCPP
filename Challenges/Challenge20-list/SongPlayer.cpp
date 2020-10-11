@@ -92,12 +92,7 @@ void SongPlayer::playFirstSong()
 
 void SongPlayer::playNextSong()
 {
-    cout    << "[SongPlayer][playNextSong] => (this->currentSong == this->playlist.end()): "
-            << (this->currentSong == this->playlist.end()) << endl;
     this->currentSong++;
-    cout    << "[SongPlayer][playNextSong] => (this->currentSong == this->playlist.end()): "
-            << (this->currentSong == this->playlist.end()) << endl;
-    
     if (this->currentSong == this->playlist.end())
     {
         this->currentSong = this->playlist.begin();
@@ -111,11 +106,7 @@ void SongPlayer::playPreviousSong()
     {
         this->currentSong = this->playlist.end();
     }
-    else
-    {
-        this->currentSong--;
-    }
-    this->displaySong("Playing previous song:", *this->currentSong);
+    this->displaySong("Playing previous song:", *this->currentSong--);
 }
 
 void SongPlayer::displaySong(const string label, const Song &song)
