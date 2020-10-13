@@ -32,6 +32,7 @@ SongPlayer::SongPlayer(string file_name) : fileName{file_name}
         }
     }
     this->currentSong = this->playlist.begin();
+    songFile.close();
 }
 
 void SongPlayer::displayPlaylist()
