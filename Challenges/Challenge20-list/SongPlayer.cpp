@@ -54,16 +54,15 @@ void SongPlayer::displayPlaylist()
     // cout << setfill(' ');
 }
 
-void SongPlayer::displayCurrentSong()
+void SongPlayer::playCurrentSong()
 {
     cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
-    this->currentSong = this->playlist.begin();
     cout << "Current Song:" << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
-    cout << *currentSong;
+    cout << *this->currentSong;
     cout << endl;
     cout << setw(57) << setfill('-') << "" << endl;
     cout << setfill(' ');
@@ -121,4 +120,11 @@ void SongPlayer::displaySong(const string label, const Song &song)
             << setw(2)  << left << "Rating"
             << endl;
     cout << *this->currentSong << endl;
+}
+
+void SongPlayer::addNewSong(string name, string artist, unsigned short int rating)
+{
+    this->playlist.emplace_back(name, artist, rating);
+    this->currentSong = this->playlist.end();
+    this->currentSong--;
 }

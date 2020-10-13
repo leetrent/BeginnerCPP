@@ -16,13 +16,14 @@ class SongPlayer
     public:
         SongPlayer(string file_name);
         ~SongPlayer() = default;
-        void displayPlaylist();
-        void displayCurrentSong();
         void displayMenu();
-        Song getCurrentSong();
+        void displayPlaylist();
+        void playCurrentSong();
+        //Song getCurrentSong();
         void playFirstSong();
         void playNextSong();
         void playPreviousSong();
+        void addNewSong(string name, string artist, unsigned short int);
 };
 
 #endif

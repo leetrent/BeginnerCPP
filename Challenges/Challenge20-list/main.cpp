@@ -19,6 +19,11 @@ int main()
         songPlayer.displayMenu();
         std::cin >> userSelection;
         userSelection = toupper(userSelection);
+
+        string name{};
+        string artist{};
+        unsigned short int rating{};
+
         switch(userSelection)
         {
             case 'F':
@@ -31,10 +36,21 @@ int main()
                 songPlayer.playPreviousSong();
                 break;
             case 'A':
-            break;
+                cin.clear();
+                cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+                cout << "Enter Song Name: ";
+                getline(cin, name);
+                cout << "Enter Song Artist: ";
+                getline(cin, artist);
+                cout << "Enter Your Rating (1-5): ";
+                cin >> rating;
+                songPlayer.addNewSong(name, artist, rating);
+                songPlayer.displayPlaylist();
+                songPlayer.playCurrentSong();
+                break;
             case 'L':
                 songPlayer.displayPlaylist();
-                songPlayer.displayCurrentSong();
+                songPlayer.playFirstSong();
                 break;
             case 'Q':
             break;
