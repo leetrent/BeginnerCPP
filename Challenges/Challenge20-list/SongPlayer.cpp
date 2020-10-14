@@ -51,8 +51,6 @@ void SongPlayer::displayPlaylist()
     {
         cout << song << endl;
     }
-    // cout << setw(57) << setfill('-') << "" << endl;
-    // cout << setfill(' ');
 }
 
 void SongPlayer::playCurrentSong()
@@ -128,4 +126,19 @@ void SongPlayer::addNewSong(string name, string artist, unsigned short int ratin
     this->playlist.emplace_back(name, artist, rating);
     this->currentSong = this->playlist.end();
     this->currentSong--;
+    this->refreshFile();
+}
+
+void SongPlayer::refreshFile()
+{
+    ofstream songFile(this->fileName);
+    if (!songFile.is_open())
+    {
+        throw FileHandlingException("Could not open file '" + fileName + "' for output.");
+    }
+    for ( const Song &song: this->playlist )
+    {
+        songFile << song.toFile() << endl;
+    }
+    songFile.close();
 }

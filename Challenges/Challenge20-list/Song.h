@@ -20,5 +20,6 @@ class Song
         unsigned short int getRating() const;
         bool operator<(const Song &rhs) const;
         bool operator==(const Song &rhs) const;
+        string toFile() const;
 };
 #endif

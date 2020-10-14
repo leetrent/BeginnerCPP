@@ -13,13 +13,13 @@ class SongPlayer
         list<Song> playlist;
         list<Song>::iterator currentSong;
         void displaySong(const string label, const Song &song);
+        void refreshFile();
     public:
         SongPlayer(string file_name);
         ~SongPlayer() = default;
         void displayMenu();
         void displayPlaylist();
         void playCurrentSong();
-        //Song getCurrentSong();
         void playFirstSong();
         void playNextSong();
         void playPreviousSong();

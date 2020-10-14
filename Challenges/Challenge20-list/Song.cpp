@@ -27,3 +27,8 @@ ostream &operator<<(ostream &os, const Song &song)
 
     return os;
 }
+
+string Song::toFile() const
+{
+    return this->name + '|' + this->artist + '|' + to_string(this->rating);
+}
