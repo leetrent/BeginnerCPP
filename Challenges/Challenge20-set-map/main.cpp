@@ -6,7 +6,12 @@ int main()
 {
     try
     {
+        cout << endl;
+        cout << "--------------------------------------------------------------------------------";
+        cout << endl;
         WordCounter("words.txt").writeResultsToFile("wordcount.txt");
+        cout << "--------------------------------------------------------------------------------";
+        cout << endl;
     }
     catch (FileHandlingException fhe)
     {

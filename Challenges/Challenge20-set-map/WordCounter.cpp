@@ -7,7 +7,6 @@
 
 WordCounter::WordCounter(string inFileName)
 {
-    cout << "[WordCounter][constructor] => (inFileName): " << inFileName << endl;
     ifstream inFile {inFileName};
     if (!inFile.is_open())
     {
@@ -26,20 +25,11 @@ WordCounter::WordCounter(string inFileName)
         }
     }
     inFile.close();
+    cout << "\"" << inFileName << "\" was successfully read." << endl;
 }
 
 void WordCounter::writeResultsToFile(string outFileName)
 {
-    // cout << "[WordCounter][writeResultsToFile] => (outFileName): " << outFileName << endl;
-    // cout << "[WordCounter][writeResultsToFile] => (wordMap.size()): " << wordMap.size() << endl;
-    // // for ( map<string, int>::iterator mapIterator : this->wordMap)
-    // for ( auto kv : this->wordMap)
-    // {
-    //     cout << setw(12) << left << kv.first
-    //          << setw(7)  << right << kv.second
-    //          << endl;
-    // }
-
     ofstream outFile {outFileName};
     if (!outFile.is_open())
     {
@@ -53,6 +43,7 @@ void WordCounter::writeResultsToFile(string outFileName)
     }
 
     outFile.close();
+    cout << "Results were successfully written to \"" << outFileName << "\"." << endl;
 }
 
 string WordCounter::cleanString(const string &str)
