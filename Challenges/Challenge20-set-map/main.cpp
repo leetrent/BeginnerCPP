@@ -6,7 +6,7 @@ int main()
 {
     try
     {
-        WordCounter("words.txt").writeResultsToFile("OUTFILE");
+        WordCounter("words.txt").writeResultsToFile("wordcount.txt");
     }
     catch (FileHandlingException fhe)
     {

@@ -18,21 +18,56 @@ WordCounter::WordCounter(string inFileName)
 
     while (getline(inFile, line))
     {
-        stringstream stream(line);
-        wordMap[word]++;
+        stringstream strStream(line);
+        while ( strStream >> word)
+        {
+            word = this->cleanString(word);
+            wordMap[word]++;
+        }
     }
+    inFile.close();
 }
 
 void WordCounter::writeResultsToFile(string outFileName)
 {
-    cout << "[WordCounter][writeResultsToFile] => (outFileName): " << outFileName << endl;
-    // for ( map<string, int>::iterator mapIterator : this->wordMap)
+    // cout << "[WordCounter][writeResultsToFile] => (outFileName): " << outFileName << endl;
+    // cout << "[WordCounter][writeResultsToFile] => (wordMap.size()): " << wordMap.size() << endl;
+    // // for ( map<string, int>::iterator mapIterator : this->wordMap)
+    // for ( auto kv : this->wordMap)
+    // {
+    //     cout << setw(12) << left << kv.first
+    //          << setw(7)  << right << kv.second
+    //          << endl;
+    // }
+
+    ofstream outFile {outFileName};
+    if (!outFile.is_open())
+    {
+        throw FileHandlingException("Could not open file '" + outFileName + "'.");
+    }
     for ( auto kv : this->wordMap)
     {
-        cout << setw(12) << left << kv.first
-             << setw(7)  << right << kv.second
-             << endl;
+        outFile << setw(12) << left << kv.first
+                << setw(7)  << right << kv.second
+                << endl;
     }
 
+    outFile.close();
+}
 
+string WordCounter::cleanString(const string &str)
+{
+    string result{};
+    for (char c : str)
+    {
+        if ( c == '.' || c == ',' || c == ';' || c == ':')
+        {
+            continue;
+        }
+        else
+        {
+            result += c;
+        }
+    }
+    return result;
 }

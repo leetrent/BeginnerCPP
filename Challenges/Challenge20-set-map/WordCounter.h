@@ -8,6 +8,7 @@ class WordCounter
 {
     private:
         map<string, int> wordMap;
+        string cleanString(const string &str);
     public:
         WordCounter(string inFileName);
         ~WordCounter() = default;
