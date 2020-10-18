@@ -1,3 +1,5 @@
+Word        Line Numbers
+----        ------------
 Aunt        [ 2 7 25 29 48 ]
 Dorothy     [ 1 7 15 29 39 43 47 51 ]
 Dorothy's   [ 31 ]

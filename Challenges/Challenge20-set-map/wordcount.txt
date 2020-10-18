@@ -1,3 +1,5 @@
+Word          Count
+----          -----
 Aunt              5
 Dorothy           8
 Dorothy's         1

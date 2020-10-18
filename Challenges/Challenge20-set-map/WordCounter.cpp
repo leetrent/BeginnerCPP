@@ -35,6 +35,13 @@ void WordCounter::writeResultsToFile(string outFileName)
     {
         throw FileHandlingException("Could not open file '" + outFileName + "'.");
     }
+
+    outFile << setw(12) << left << "Word"
+            << setw(7)  << right << "Count"
+            << endl;
+    outFile << setw(12) << left << "----"
+            << setw(7)  << right << "-----"
+            << endl;
     for ( auto kv : this->wordMap)
     {
         outFile << setw(12) << left << kv.first

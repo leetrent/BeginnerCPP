@@ -39,6 +39,13 @@ void LineCounter::writeResultsToFile(string outFileName)
     {
         throw FileHandlingException("Could not open file '" + outFileName + "'.");
     }
+
+    outFile << setw(12) << left << "Word"
+            << setw(7)  << right << "Line Numbers"
+            << endl;
+    outFile << setw(12) << left << "----"
+            << setw(7)  << right << "------------"
+            << endl;
     for ( auto kv : this->lineMap)
     {
         outFile << setw(12) << left << kv.first
