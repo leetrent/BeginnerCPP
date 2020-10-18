@@ -46,13 +46,35 @@ void LineCounter::writeResultsToFile(string outFileName)
     outFile << setw(12) << left << "----"
             << setw(7)  << right << "------------"
             << endl;
-    for ( auto kv : this->lineMap)
+
+    ////////////////////////////////////////////////////////////////////////
+    // METHOD #1:
+    ////////////////////////////////////////////////////////////////////////
+    // for ( auto kv : this->lineMap)
+    // {
+    //     outFile << setw(12) << left << kv.first
+    //             << left << "[ ";
+    //     for ( auto value : kv.second)
+    //     {
+    //         outFile << value << " ";
+    //     }
+    //     outFile << "]" << endl;
+    // }
+
+    ////////////////////////////////////////////////////////////////////////
+    // METHOD #2:
+    ////////////////////////////////////////////////////////////////////////
+    for (map<string, set<int>>::iterator    lineMapIterator = this->lineMap.begin();
+                                            lineMapIterator != this->lineMap.end();
+                                            lineMapIterator++)
     {
-        outFile << setw(12) << left << kv.first
+        outFile << setw(12) << left << lineMapIterator->first
                 << left << "[ ";
-        for ( auto value : kv.second)
+        for ( set<int>::iterator    lineSetIterator =   lineMapIterator->second.begin();
+                                    lineSetIterator !=  lineMapIterator->second.end();
+                                    lineSetIterator++)
         {
-            outFile << value << " ";
+             outFile << *lineSetIterator << " ";
         }
         outFile << "]" << endl;
     }
