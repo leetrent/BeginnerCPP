@@ -42,10 +42,26 @@ void WordCounter::writeResultsToFile(string outFileName)
     outFile << setw(12) << left << "----"
             << setw(7)  << right << "-----"
             << endl;
-    for ( auto kv : this->wordMap)
+
+    ////////////////////////////////////////////////////////////////////////
+    // METHOD #1:
+    ////////////////////////////////////////////////////////////////////////
+    // for ( auto kv : this->wordMap)
+    // {
+    //     outFile << setw(12) << left << kv.first
+    //             << setw(7)  << right << kv.second
+    //             << endl;
+    // }
+
+    ////////////////////////////////////////////////////////////////////////
+    // METHOD #2:
+    ////////////////////////////////////////////////////////////////////////
+    for (map<string, int>::iterator wordMapIterator = this->wordMap.begin();
+                                    wordMapIterator != this->wordMap.end();
+                                    wordMapIterator++)
     {
-        outFile << setw(12) << left << kv.first
-                << setw(7)  << right << kv.second
+        outFile << setw(12) << left << wordMapIterator->first
+                << setw(7)  << right << wordMapIterator->second
                 << endl;
     }
 
