@@ -21,14 +21,12 @@ const vector<string> test_strings
 
 int main()
 {
-    cout << boolalpha;
-
-    cout << setw(8) << left << "Result" << "String" << endl;
-    for ( const string &val : test_strings)
-    {
-        //cout << val << " : " << PalindromeUtil(val).IsPalindrome() << endl;
-        cout << setw(8) << left << PalindromeUtil(val).IsPalindrome() << val << endl;
+    std::cout << std::boolalpha;
+    std::cout << std::setw(8) << std::left << "Result" << "String" << std::endl;
+    for(const auto& val : test_strings) {
+        std::cout << std::setw(8) << std::left << PalindromeUtil(val).IsPalindrome() << val << std::endl;
     }
+    std::cout << std::endl;
 
     return 0;
 }

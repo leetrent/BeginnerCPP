@@ -6,10 +6,6 @@
 PalindromeUtil::PalindromeUtil(string val)
     :value{val}
 {
-    cout << endl << "================================================================================" << endl;
-    cout << val << endl;
-
-    //this->is_palindrome = false;
     queue<char> ascending;
     stack<char> descending;
 
@@ -23,8 +19,8 @@ PalindromeUtil::PalindromeUtil(string val)
         }
     }
 
-    this->display(ascending);
-    this->display(descending);
+    // this->display(ascending);
+    // this->display(descending);
 
     char c1{};
     char c2{};
